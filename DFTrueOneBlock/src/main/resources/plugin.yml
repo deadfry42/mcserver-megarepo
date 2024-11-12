@@ -1,0 +1,23 @@
+name: DFTrueOneBlock
+version: '1.0-SNAPSHOT'
+main: uk.co.nikodem.dFTrueOneBlock.DFTrueOneBlock
+api-version: '1.20'
+commands:
+  menu:
+    aliases: ["skyblockmenu", "skyblock", "sbm", "sbmenu", "sb"]
+    description: "Opens the skyblock menu"
+    usage: "/menu"
+  create:
+    aliases: ["newworld", "worldnew"]
+    description: "Makes a new world"
+    usage: "/create"
+  worlds:
+    aliases: ["islands", "wrlds"]
+    description: "Shows you your worlds"
+    usage: "/worlds"
+  save:
+    description: "temp command"
+    usage: "/save"
+  reconstruct:
+    description: "temp command"
+    usage: "/reconstruct"

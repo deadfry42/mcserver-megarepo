@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DFSmpPlugin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DFSmpPlugin_jar</output-path>
+    <root id="archive" name="DFSmpPlugin.jar">
+      <element id="module-output" name="DFSmpPlugin" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DFLobbyPlugin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DFLobbyPlugin_jar</output-path>
+    <root id="archive" name="DFLobbyPlugin.jar">
+      <element id="module-output" name="DFLobbyPlugin" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
