@@ -1,6 +1,15 @@
 # mcserver plugin megarepo
 all of the plugins I custom made especially for my minecraft server!  
 
+> [!NOTE]
+> This is simply an archive of my plugin code.  
+> I will likely not accept pull requests/issues unless the PR fixes technical issues / improves efficiency.  
+> Also, please not I am in no way a _good_ programmer. You _will_ find mistakes & issues if you read through this code.  
+
+> [!WARNING]
+> You can use these plugins for your own server, but do NOT expect them to be plug-and-play.  
+> They are specifically built for my server, and are likely not going to work in another without modification of the plugins.
+
 Plugins and what they do:
 - DFSmpPlugin
   - Used in the SMP server and the Skyblock server.
@@ -22,8 +31,3 @@ Plugins and what they do:
   - Prevents players from modifying the world in any way before the /startsmp command is run
   - Prevents players from entering the nether, the end and pvping until their respective commands have been run.
   - Commands can only be ran on the server console.
-
-> [!NOTE]
-> This is simply an archive of my plugin code.  
-> I will likely not accept pull requests/issues unless the PR fixes technical issues / improves efficiency.  
-> Also, please not I am in no way a _good_ programmer. You _will_ find mistakes & issues if you read through this code.  
