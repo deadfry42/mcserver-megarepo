@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "dfjr:item/obsidian_tools/obsidian_sword"
+    }
+}

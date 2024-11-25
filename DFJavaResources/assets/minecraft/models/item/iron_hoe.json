@@ -1,0 +1,9 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/iron_hoe"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001314}, "model": "dfjr:item/autosmelt_tools/autosmelt_hoe"}
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/wooden_pickaxe"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001412}, "model": "dfjr:item/silk_tools/silk_pickaxe"}
+    ]
+}

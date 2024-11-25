@@ -1,0 +1,9 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/wooden_hoe"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001414}, "model": "dfjr:item/silk_tools/silk_hoe"}
+    ]
+}

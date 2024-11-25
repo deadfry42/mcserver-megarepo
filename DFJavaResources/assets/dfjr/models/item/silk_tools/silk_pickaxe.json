@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "dfjr:item/silk_tools/silk_pickaxe"
+    }
+}

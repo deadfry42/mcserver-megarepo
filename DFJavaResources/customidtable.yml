@@ -1,0 +1,64 @@
+# custom id scheme
+# 1000xxyy
+# xx - 2-digit number, item type
+#  10 - calcite
+#  11 - obsidian
+#  12 - vein
+#  13 - autosmelt
+#  14 - silk
+#  15 - etc
+#  16 - plants
+#  99 - undefined
+# yy - 2-digit number, item class
+#  10 - sword
+#  11 - axe
+#  12 - pickaxe
+#  13 - shovel
+#  14 - hoe
+#  15 - helmet
+#  16 - chestplate
+#  17 - leggings
+#  18 - boots
+#  19 - magicmirror
+#  20 - entity bucket
+#  21 - warped wart
+#  99 - undefined
+
+# example:
+# Calcite Sword (id: 10001010)
+# Obsidian Shovel (id: 10001113)
+# Magic mirror (id: 10001519)
+
+# the following below are the ones that this resource pack supports
+
+calcite_sword: 10001010
+calcite_axe: 10001011
+calcite_pickaxe: 10001012
+calcite_shovel: 10001013
+calcite_hoe: 10001014
+
+obsidian_sword: 10001110
+obsidian_axe: 10001111
+obsidian_pickaxe: 10001112
+obsidian_shovel: 10001113
+obsidian_hoe: 10001114
+
+vein_axe: 10001211
+vein_pickaxe: 10001212
+
+autosmelt_sword: 10001310
+autosmelt_axe: 10001311
+autosmelt_pickaxe: 10001312
+autosmelt_shovel: 10001313
+autosmelt_hoe: 10001314
+
+silk_sword: 10001410
+silk_axe: 10001411
+silk_pickaxe: 10001412
+silk_shovel: 10001413
+silk_hoe: 10001414
+
+magic_mirror: 10001519
+entity_bucket: 10001520
+
+warped_wart: 10001621

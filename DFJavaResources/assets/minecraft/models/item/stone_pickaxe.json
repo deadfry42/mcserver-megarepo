@@ -1,0 +1,9 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/stone_pickaxe"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001012}, "model": "dfjr:item/calcite_tools/calcite_pickaxe"}
+    ]
+}

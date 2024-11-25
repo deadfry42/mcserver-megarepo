@@ -1,0 +1,9 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/netherite_sword"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001110}, "model": "dfjr:item/obsidian_tools/obsidian_sword"}
+    ]
+}

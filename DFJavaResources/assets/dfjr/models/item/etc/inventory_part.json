@@ -1,0 +1,6 @@
+{
+  "parent": "dfjr:item/template",
+  "textures": {
+    "1": "dfjr:item/etc/inventory_part"
+  }
+}
