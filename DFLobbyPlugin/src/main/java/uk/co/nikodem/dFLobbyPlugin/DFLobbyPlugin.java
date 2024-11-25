@@ -1,9 +1,7 @@
 package uk.co.nikodem.dFLobbyPlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import uk.co.nikodem.dFLobbyPlugin.Commands.DanSMP;
-import uk.co.nikodem.dFLobbyPlugin.Commands.SMP;
-import uk.co.nikodem.dFLobbyPlugin.Commands.Skyblock;
+import uk.co.nikodem.dFLobbyPlugin.Commands.*;
 import uk.co.nikodem.dFLobbyPlugin.Events.OnJoin;
 import uk.co.nikodem.dFLobbyPlugin.Events.OnLeave;
 import uk.co.nikodem.dFLobbyPlugin.Handlers.BungeeUtils;
@@ -24,6 +22,8 @@ public final class DFLobbyPlugin extends JavaPlugin {
         Objects.requireNonNull(getCommand("dansmp")).setExecutor(new DanSMP(bu));
         Objects.requireNonNull(getCommand("smp")).setExecutor(new SMP(bu));
         Objects.requireNonNull(getCommand("skyblock")).setExecutor(new Skyblock(bu));
+        Objects.requireNonNull(getCommand("testserver")).setExecutor(new TestPlr(bu));
+        Objects.requireNonNull(getCommand("modded")).setExecutor(new Modded(bu));
     }
 
     @Override

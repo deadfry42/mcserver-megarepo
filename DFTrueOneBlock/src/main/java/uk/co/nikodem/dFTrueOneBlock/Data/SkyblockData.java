@@ -118,8 +118,8 @@ public class SkyblockData {
     @Nullable
     public SkyblockWorld getSkyblockWorldFromRealID(String realid, boolean loadIfNotLoaded) {
         SkyblockWorld result = null;
-        if (skyblockWorlds == null) return tryToLoadSkyblockWorld(realid);;
-        if (skyblockWorlds.isEmpty()) return tryToLoadSkyblockWorld(realid);;
+        if (skyblockWorlds == null) return tryToLoadSkyblockWorld(realid);
+        if (skyblockWorlds.isEmpty()) return tryToLoadSkyblockWorld(realid);
         for (SkyblockWorld skyblockWorld : skyblockWorlds) {
             if (Objects.equals(skyblockWorld.getRealId(), realid)) {
                 result = skyblockWorld;
@@ -129,14 +129,15 @@ public class SkyblockData {
         if (loadIfNotLoaded && result == null) {
             // not loaded, attempt to load
             result = tryToLoadSkyblockWorld(realid);
-            if (result != null) skyblockWorlds.add(result);
         }
         return result;
     }
 
     @Nullable
     public SkyblockWorld tryToLoadSkyblockWorld(String realid) {
-        return plugin.saveData.loadSkyblockWorldFromFile("skyblockworlds."+realid);
+        SkyblockWorld world = plugin.saveData.loadSkyblockWorldFromFile("skyblockworlds."+realid);
+        if (world != null) skyblockWorlds.add(world);
+        return world;
     }
 
     @Nullable
@@ -159,18 +160,28 @@ public class SkyblockData {
         return newWorld;
     }
 
-    public void moveSkyblockWorld(SkyblockPlayer skyblockPlayer, byte worldId, byte newWorldId) {
-        SkyblockWorld skyblockWorld = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+worldId);
-        SkyblockWorld nullWorld = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+newWorldId);
+    public byte moveSkyblockWorld(SkyblockPlayer skyblockPlayer, byte worldId, byte newWorldId) {
+        SkyblockWorld skyblockWorld = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+worldId, true);
+        SkyblockWorld nullWorld = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+newWorldId, true);
 
         if (nullWorld != null) {
-            swapSkyblockWorlds(skyblockPlayer, worldId, newWorldId);
-            return;
+            return swapSkyblockWorlds(skyblockPlayer, worldId, newWorldId);
         }
 
-        if (skyblockWorld == null) {
-            return;
+        if (skyblockWorld == null) return -1; // world is not found lol
+        if (skyblockWorlds == null) return -1; // world is not found lol
+        if (skyblockWorlds.isEmpty()) return -1; // world is not found lol
+
+        SkyblockWorld result = null;
+        for (SkyblockWorld worldInList : skyblockWorlds) {
+            if (Objects.equals(worldInList.getRealId(), skyblockPlayer.getUniqueId()+"--"+worldId)) {
+                result = worldInList;
+                break;
+            }
         }
+        if (result == null) return -1; // world is not found lol
+
+        skyblockWorlds.remove(result);
 
         if (worldId == 1) {
             skyblockPlayer.removeWorld1();
@@ -188,16 +199,45 @@ public class SkyblockData {
             skyblockPlayer.setWorld3(skyblockWorld);
         }
 
-        skyblockWorld.setWorldId(worldId);
+        saveSkyblockPlayer(skyblockPlayer);
+
+        skyblockWorld.setWorldId(newWorldId);
+        saveSkyblockWorld(skyblockWorld);
+
+        plugin.saveData.deleteWorldData(skyblockPlayer.getUniqueId()+"--"+worldId);
+        return 0; // world has been moved
     }
 
-    public void swapSkyblockWorlds(SkyblockPlayer skyblockPlayer, byte worldId, byte swappedWorldId) {
-        SkyblockWorld worlda = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+worldId);
-        SkyblockWorld worldb = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+swappedWorldId);
+    public byte swapSkyblockWorlds(SkyblockPlayer skyblockPlayer, byte worldId, byte swappedWorldId) {
+        SkyblockWorld worlda = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+worldId, true);
+        SkyblockWorld worldb = getSkyblockWorldFromRealID(skyblockPlayer.getUniqueId()+"--"+swappedWorldId, true);
 
         if (worlda == null || worldb == null) {
-            return;
+            return -1; // world is not found lol
         }
+
+        if (skyblockWorlds == null) return -1; // world is not found lol
+        if (skyblockWorlds.isEmpty()) return -1; // world is not found lol
+
+        SkyblockWorld resulta = null;
+        SkyblockWorld resultb = null;
+        for (SkyblockWorld worldInList : skyblockWorlds) {
+            if (Objects.equals(worldInList.getRealId(), skyblockPlayer.getUniqueId()+"--"+worldId)) {
+                resulta = worldInList;
+                continue;
+            } else if (Objects.equals(worldInList.getRealId(), skyblockPlayer.getUniqueId()+"--"+swappedWorldId)) {
+                resultb = worldInList;
+                continue;
+            }
+            if (resulta != null && resultb != null) {
+                break;
+            }
+        }
+        if (resulta == null) return -1; // world is not found lol
+        if (resultb == null) return -1; // world is not found lol
+
+        skyblockWorlds.remove(resulta);
+        skyblockWorlds.remove(resultb);
 
         if (worldId == 1) {
             skyblockPlayer.setWorld1(worldb);
@@ -215,8 +255,13 @@ public class SkyblockData {
             skyblockPlayer.setWorld3(worlda);
         }
 
+        saveSkyblockPlayer(skyblockPlayer);
+
         worlda.setWorldId(swappedWorldId);
         worldb.setWorldId(worldId);
+        saveSkyblockWorld(worlda);
+        saveSkyblockWorld(worldb);
+        return 0; // worlds have been swapped
     }
 
     public void deleteSkyblockWorld(SkyblockWorld skyblockWorld) {

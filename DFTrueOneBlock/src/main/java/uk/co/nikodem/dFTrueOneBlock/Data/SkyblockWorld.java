@@ -35,7 +35,11 @@ public class SkyblockWorld {
         this.gamemode = gamemode;
         this.completed = false;
         this.worldIcon = WorldIcon.grassBlock;
-        this.completedTutorial = gamemode == Gamemode.hardcore;
+        this.completedTutorial = true;
+
+        if (gamemode == Gamemode.hardcore || gamemode == Gamemode.test) {
+            this.completedTutorial = false;
+        }
 
         SkyblockWorldMember owner = new SkyblockWorldMember(plr.getUniqueId());
         owner.setToOwner();

@@ -1,0 +1,20 @@
+name: DFLobbyPlugin
+version: '1.0-SNAPSHOT'
+main: uk.co.nikodem.dFLobbyPlugin.DFLobbyPlugin
+api-version: '1.20'
+commands:
+  dansmp:
+    usage: /dansmp
+    description: "join dansmp, only if currently whitelisted"
+  smp:
+    usage: /smp
+    description: "join smp"
+  skyblock:
+    usage: /skyblock
+    description: "join skyblock"
+  testserver:
+    usage: /testserver
+    description: "join testserver"
+  modded:
+    usage: /modded
+    description: "join modded"

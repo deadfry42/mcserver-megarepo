@@ -3,12 +3,14 @@ package uk.co.nikodem.dFSmpPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
+
+import uk.co.nikodem.dFSmpPlugin.Content.CustomItems.*;
+
 import uk.co.nikodem.dFSmpPlugin.Content.Commands.*;
 import uk.co.nikodem.dFSmpPlugin.Content.Events.*;
+import uk.co.nikodem.dFSmpPlugin.Content.Recipes.CustomItemRecipes;
+import uk.co.nikodem.dFSmpPlugin.Content.Recipes.VanillaRecipes;
 import uk.co.nikodem.dFSmpPlugin.Content.Utils.*;
 
 import org.bukkit.scheduler.BukkitScheduler;
@@ -17,46 +19,28 @@ import java.util.Objects;
 
 public final class DFSmpPlugin extends JavaPlugin {
 
+    public final BungeeUtils bu = new BungeeUtils(this);
+
+    public final VanillaRecipes vr = new VanillaRecipes(this);
+    public final CustomItemRecipes cir = new CustomItemRecipes(this);
+
     @Override
     public void onEnable() {
         // Plugin startup logic
 
-        getConfig().addDefault("basicMode", false);
-        getConfig().addDefault("combatlogtime", 30);
-        saveConfig();
+        initConfig();
 
-        AntiSpamManager.init(this);
-        CombatLoggingManager.init(this);
+        initHandlers();
 
-        // basic mode manager, for things like skyblock
-        BasicModeManager.initBasicMode(this);
+        initRecipes();
 
-        // create custom recipes
-        new RecipeCreator(this);
+        initCustomItems();
 
-        // discover those recipes on join
-        getServer().getPluginManager().registerEvents(new OnJoin(), this);
+        initCommands();
 
-        // block certain commands when in combat
-        getServer().getPluginManager().registerEvents(new ExecuteCommand(), this);
+        initCombatLoggingEvents();
 
-        // custom item usage
-        getServer().getPluginManager().registerEvents(new ItemUse(), this);
-        getServer().getPluginManager().registerEvents(new BreakBlock(), this);
-        getServer().getPluginManager().registerEvents(new DragonEggPrevention(), this);
-        getServer().getPluginManager().registerEvents(new PlaceBlock(), this);
-        // getServer().getPluginManager().registerEvents(new SmithingTable(this), this);
-
-        // combat logging
-        getServer().getPluginManager().registerEvents(new OnHit(this), this);
-        getServer().getPluginManager().registerEvents(new OnDeath(this), this);
-        getServer().getPluginManager().registerEvents(new OnLeave(this), this);
-
-        BungeeUtils bu = new BungeeUtils(this);
-        bu.initiateBungeeCordChannel();
-
-        Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand(this, bu));
-        Objects.requireNonNull(getCommand("bin")).setExecutor(new BinCommand());
+        initBungeeChannel();
 
         BukkitScheduler scheduler = getServer().getScheduler();
         scheduler.runTaskTimer(this, () -> {
@@ -66,16 +50,52 @@ public final class DFSmpPlugin extends JavaPlugin {
                     plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2You are no longer in combat!"));
                     CombatLoggingManager.playerRemoveCombatLog(plr);
                 }
-                if (
-                        CustomItemManager.IsItem(Objects.requireNonNull(plr.getInventory().getItem(EquipmentSlot.HEAD)), CustomItemManager.createCalciteHelmet())
-                        && CustomItemManager.IsItem(Objects.requireNonNull(plr.getInventory().getItem(EquipmentSlot.CHEST)), CustomItemManager.createCalciteChestplate())
-                        && CustomItemManager.IsItem(Objects.requireNonNull(plr.getInventory().getItem(EquipmentSlot.LEGS)), CustomItemManager.createCalciteLeggings())
-                        && CustomItemManager.IsItem(Objects.requireNonNull(plr.getInventory().getItem(EquipmentSlot.FEET)), CustomItemManager.createCalciteBoots())
-                ) {
-                    plr.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 25, 1, true, false));
-                }
+                SetBonuses.ApplySetBonuses(plr);
             }
         }, 0, 20);
+    }
+
+    public void initConfig() {
+        getConfig().addDefault("basicMode", false);
+        getConfig().addDefault("combatlogtime", 30);
+        saveConfig();
+    }
+
+    public void initHandlers() {
+        AntiSpamManager.init(this);
+        CombatLoggingManager.init(this);
+        BasicModeManager.initBasicMode(this);
+    }
+
+    public void initRecipes() {
+        getServer().getPluginManager().registerEvents(new OnJoin(this), this);
+    }
+
+    public void initCustomItems() {
+        getServer().getPluginManager().registerEvents(new ItemUse(), this);
+        getServer().getPluginManager().registerEvents(new BreakBlock(), this);
+        getServer().getPluginManager().registerEvents(new DragonEggPrevention(), this);
+        getServer().getPluginManager().registerEvents(new PlaceBlock(), this);
+        getServer().getPluginManager().registerEvents(new HungerChange(), this);
+        getServer().getPluginManager().registerEvents(new OnWear(this), this);
+        // getServer().getPluginManager().registerEvents(new SmithingTable(this), this);
+    }
+
+    public void initCommands() {
+        Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand(this, bu));
+        Objects.requireNonNull(getCommand("bin")).setExecutor(new BinCommand());
+    }
+
+    public void initCombatLoggingEvents() {
+        getServer().getPluginManager().registerEvents(new OnHit(this), this);
+        getServer().getPluginManager().registerEvents(new OnDeath(this), this);
+        getServer().getPluginManager().registerEvents(new OnLeave(this), this);
+
+        getServer().getPluginManager().registerEvents(new ExecuteCommand(), this);
+    }
+
+    public void initBungeeChannel() {
+        bu.initiateBungeeCordChannel();
     }
 
     @Override

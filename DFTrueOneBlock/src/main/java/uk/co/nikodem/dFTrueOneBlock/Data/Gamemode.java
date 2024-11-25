@@ -6,11 +6,11 @@ import org.bukkit.Material;
 import javax.annotation.Nullable;
 
 public class Gamemode {
-    public static final Gamemode deathprogress = new Gamemode((byte) -128, Material.SCULK_CATALYST, "&4Death progression", "&4Die to progress.");
-    public static final Gamemode hardcore = new Gamemode((byte) -127, Material.ENDER_EYE, "&4Hardcore", "&4One life.");
+    public static final Gamemode deathprogress = new Gamemode((byte) -128, Material.SCULK_CATALYST, "&4Death progression", "&4Die to progress in the game.");
+    public static final Gamemode hardcore = new Gamemode((byte) -127, Material.ENDER_EYE, "&4Hardcore", "&4One life.\nIf you die, your world is automatically deleted.");
     public static final Gamemode standard = new Gamemode((byte) 0, Material.GRASS_BLOCK, "&3Standard", "&2Normal skyblock");
     public static final Gamemode oneblock = new Gamemode((byte) 1, Material.BEDROCK, "&3One block", "&2Normal one-block skyblock");
-    public static final Gamemode test = new Gamemode((byte) 69, Material.DIAMOND_BLOCK, "test", "test");
+    public static final Gamemode test = new Gamemode((byte) 69, Material.DIAMOND_BLOCK, "&2Creative", "&2Normal skyblock in creative mode");
     public static final Gamemode[] gamemodes = {deathprogress, hardcore, standard, oneblock, test};
 
     @Nullable

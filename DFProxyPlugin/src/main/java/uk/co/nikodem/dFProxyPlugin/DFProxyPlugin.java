@@ -76,7 +76,7 @@ public class DFProxyPlugin {
                         .color(TextColor.color(0xB2482D));
                 Component msg3 = Component.text("This could mean that certain things won't work as well as it would on Java.")
                         .color(TextColor.color(0xB22D23));
-                Component msg4 = Component.text("Some known caveats are: no custom textures, no voice chat support.")
+                Component msg4 = Component.text("Some known caveats are: no custom textures.")
                         .color(TextColor.color(0xB22824));
                 plr.sendMessage(msg1);
                 plr.sendMessage(msg2);
@@ -86,9 +86,9 @@ public class DFProxyPlugin {
             }
             Component msg1 = Component.text("Welcome to the server!")
                     .color(TextColor.color(0x03989e));
-            Component msg2 = Component.text("Remember that the simple voice chat is recommended for the best experience!")
+            Component msg2 = Component.text("You can join the discord server to keep updated with the server's updates!")
                     .color(TextColor.color(0x5d782e));
-            Component msg3 = Component.text("You can find the mod at https://modrinth.com/plugin/simple-voice-chat")
+            Component msg3 = Component.text("You can find the discord server at https://discord.gg/SpukTa6jBf")
                     .color(TextColor.color(0x588163));
             plr.sendMessage(msg1);
             plr.sendMessage(msg2);

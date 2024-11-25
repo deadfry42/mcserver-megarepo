@@ -121,7 +121,7 @@ public class GuiHelper {
     public static void playSucceedSound(Player plr) {
         plr.playSound(
                 plr,
-                Sound.ENTITY_ARROW_HIT_PLAYER,
+                Sound.ENTITY_EXPERIENCE_ORB_PICKUP,
                 1F,
                 1F
         );

@@ -12,3 +12,9 @@ commands:
   skyblock:
     usage: /skyblock
     description: "join skyblock"
+  testserver:
+    usage: /testserver
+    description: "join testserver"
+  modded:
+    usage: /modded
+    description: "join modded"

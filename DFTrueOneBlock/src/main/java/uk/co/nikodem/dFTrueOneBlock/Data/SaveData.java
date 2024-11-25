@@ -160,6 +160,7 @@ public class SaveData {
             getWorldData().set(memberPath+".hunger", member.getHunger());
             getWorldData().set(memberPath+".lvl", member.getLvl());
             getWorldData().set(memberPath+".exp", member.getExp());
+            getWorldData().set(memberPath+".sneaking", member.getSneaking());
 
             saveItemStack(getWorldData(), memberPath+".cursorItem", member.getCursorItem());
             getWorldData().set(memberPath+".bed", member.getBed());
@@ -209,6 +210,7 @@ public class SaveData {
                 int hunger = getWorldData().getInt(memberPath+".hunger");
                 float exp = (float) getWorldData().getDouble(memberPath+".exp");
                 int lvl = getWorldData().getInt(memberPath+".lvl");
+                boolean sneaking = getWorldData().getBoolean(memberPath+".sneaking");
                 Location bed = getWorldData().getLocation(memberPath+".bed");
                 ItemStack cursorItem = createItemStackFromConfiguration(getWorldData(), memberPath+".cursorItem");
                 ItemStack[] inv = createInventoryFromConfiguration(getWorldData(), memberPath+".inv");
@@ -223,6 +225,7 @@ public class SaveData {
                 skyblockWorldMember.setHunger(hunger);
                 skyblockWorldMember.setExp(exp);
                 skyblockWorldMember.setLvl(lvl);
+                skyblockWorldMember.setSneaking(sneaking);
 
                 skyblockWorld.registerMember(skyblockWorldMember);
             }
@@ -358,11 +361,15 @@ public class SaveData {
         return item;
     }
 
-    public void deleteWorldData(SkyblockWorld skyblockWorld) {
-        String path = "skyblockworlds."+skyblockWorld.getRealId();
+    public void deleteWorldData(String realid) {
+        String path = "skyblockworlds."+realid;
         assert getWorldData() != null;
         getWorldData().set(path, null);
         saveWorldData();
+    }
+
+    public void deleteWorldData(SkyblockWorld skyblockWorld) {
+        deleteWorldData(skyblockWorld.getRealId());
     }
 
     // end of worlddata functions
