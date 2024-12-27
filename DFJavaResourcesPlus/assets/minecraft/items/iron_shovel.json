@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/iron_sword"
+      },
+      "entries": [
+        {
+          "threshold": 10002113,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/copper/copper_shovel"
+          }
+        },
+        {
+          "threshold": 10001313,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/firidium/firidium_shovel"
+          }
+        }
+      ]
+    }
+  }

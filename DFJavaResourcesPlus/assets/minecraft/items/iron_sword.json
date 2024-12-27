@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/iron_sword"
+      },
+      "entries": [
+        {
+          "threshold": 10002110,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/copper/copper_sword"
+          }
+        },
+        {
+          "threshold": 10001310,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/firidium/firidium_sword"
+          }
+        }
+      ]
+    }
+  }

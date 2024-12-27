@@ -1,0 +1,38 @@
+# custom id scheme
+# 1000xxyy
+# xx - 2-digit number, item type
+#  10 - calcite
+#  11 - obsidian
+#  12 - vein
+#  13 - autosmelt
+#  14 - silk
+#  15 - etc
+#  16 - plants
+#  17 - requested (suggested by others, added as a gag)
+#  18 - accessory
+#  19 - progressSword
+#  20 - gun
+#  21 - copper
+#  22 - custom totem icons
+#  23 - sculk
+#  99 - undefined
+# yy - 2-digit number, item class
+#  10 - sword
+#  11 - axe
+#  12 - pickaxe
+#  13 - shovel
+#  14 - hoe
+#  15 - helmet
+#  16 - chestplate
+#  17 - leggings
+#  18 - boots
+#  19 - magicmirror
+#  20 - entity bucket
+#  21 - warped wart
+#  22 - other melee weapon
+#  99 - undefined
+
+# example:
+# Calcite Sword (id: 10001010)
+# Obsidian Shovel (id: 10001113)
+# Magic mirror (id: 10001519)

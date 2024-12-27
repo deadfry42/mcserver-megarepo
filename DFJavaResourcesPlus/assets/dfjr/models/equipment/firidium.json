@@ -1,0 +1,14 @@
+{
+    "layers": {
+      "humanoid": [
+        {
+          "texture": "dfjr:firidium_main"
+        }
+      ],
+      "humanoid_leggings": [
+        {
+          "texture": "dfjr:firidium_legs"
+        }
+      ]
+    }
+  }

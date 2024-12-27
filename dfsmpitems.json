@@ -1,0 +1,969 @@
+{
+    "format_version": 1,
+    "items": {
+        "minecraft:netherite_sword": [
+            {
+                "display_name": "Obsidian Sword",
+                "name": "obsidian_sword",
+                "icon": "obsidian_sword",
+                "custom_model_data": 10001110,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_axe": [
+            {
+                "display_name": "Obsidian Axe",
+                "name": "obsidian_axe",
+                "icon": "obsidian_axe",
+                "custom_model_data": 10001111,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_pickaxe": [
+            {
+                "display_name": "Obsidian Pickaxe",
+                "name": "obsidian_pickaxe",
+                "icon": "obsidian_pickaxe",
+                "custom_model_data": 10001112,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_shovel": [
+            {
+                "display_name": "Obsidian Shovel",
+                "name": "obsidian_shovel",
+                "icon": "obsidian_shovel",
+                "custom_model_data": 10001113,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_hoe": [
+            {
+                "display_name": "Obsidian Hoe",
+                "name": "obsidian_hoe",
+                "icon": "obsidian_hoe",
+                "custom_model_data": 10001114,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_helmet": [
+            {
+                "display_name": "Obsidian Helmet",
+                "name": "obsidian_helmet",
+                "icon": "obsidian_helmet",
+                "custom_model_data": 10001115,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Sculk Helmet",
+                "name": "sculk_helmet",
+                "icon": "sculk_helmet",
+                "custom_model_data": 10002315,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_chestplate": [
+            {
+                "display_name": "Obsidian Chestplate",
+                "name": "obsidian_chestplate",
+                "icon": "obsidian_chestplate",
+                "custom_model_data": 10001116,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Sculk Chestplate",
+                "name": "sculk_chestplate",
+                "icon": "sculk_chestplate",
+                "custom_model_data": 10002316,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_leggings": [
+            {
+                "display_name": "Obsidian Leggings",
+                "name": "obsidian_leggings",
+                "icon": "obsidian_leggings",
+                "custom_model_data": 10001117,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Sculk Leggings",
+                "name": "sculk_leggings",
+                "icon": "sculk_leggings",
+                "custom_model_data": 10002317,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:netherite_boots": [
+            {
+                "display_name": "Obsidian Boots",
+                "name": "obsidian_boots",
+                "icon": "obsidian_boots",
+                "custom_model_data": 10001118,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Sculk Boots",
+                "name": "sculk_boots",
+                "icon": "sculk_boots",
+                "custom_model_data": 10002318,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:echo_shard": [
+            {
+                "display_name": "Sculk Fragment",
+                "name": "sculk_fragment",
+                "icon": "sculk_fragment",
+                "custom_model_data": 10002320,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_sword": [
+            {
+                "display_name": "Firidium Sword",
+                "name": "firidium_sword",
+                "icon": "firidium_sword",
+                "custom_model_data": 10001310,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Sword",
+                "name": "copper_sword",
+                "icon": "copper_sword",
+                "custom_model_data": 10002110,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_pickaxe": [
+            {
+                "display_name": "Vein Miner's Pickaxe",
+                "name": "vein_pickaxe",
+                "icon": "vein_pickaxe",
+                "custom_model_data": 10001212,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Firidium Pickaxe",
+                "name": "firidium_pickaxe",
+                "icon": "firidium_pickaxe",
+                "custom_model_data": 10001312,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Pickaxe",
+                "name": "copper_pickaxe",
+                "icon": "copper_pickaxe",
+                "custom_model_data": 10002112,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_axe": [
+            {
+                "display_name": "Vein Miner's Axe",
+                "name": "vein_axe",
+                "icon": "vein_axe",
+                "custom_model_data": 10001211,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Firidium Axe",
+                "name": "firidium_axe",
+                "icon": "firidium_axe",
+                "custom_model_data": 10001311,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Axe",
+                "name": "copper_axe",
+                "icon": "copper_axe",
+                "custom_model_data": 10002111,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_shovel": [
+            {
+                "display_name": "Firidium Shovel",
+                "name": "firidium_shovel",
+                "icon": "firidium_shovel",
+                "custom_model_data": 10001313,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Shovel",
+                "name": "copper_shovel",
+                "icon": "copper_shovel",
+                "custom_model_data": 10002113,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_hoe": [
+            {
+                "display_name": "Firidium Hoe",
+                "name": "firidium_hoe",
+                "icon": "firidium_hoe",
+                "custom_model_data": 10001314,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Hoe",
+                "name": "copper_hoe",
+                "icon": "copper_hoe",
+                "custom_model_data": 10002114,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_helmet": [
+            {
+                "display_name": "Firidium Helmet",
+                "name": "firidium_helmet",
+                "icon": "firidium_helmet",
+                "custom_model_data": 10001315,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Helmet",
+                "name": "copper_helmet",
+                "icon": "copper_helmet",
+                "custom_model_data": 10002115,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_chestplate": [
+            {
+                "display_name": "Firidium Chestplate",
+                "name": "firidium_chestplate",
+                "icon": "firidium_chestplate",
+                "custom_model_data": 10001316,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Chestplate",
+                "name": "copper_chestplate",
+                "icon": "copper_chestplate",
+                "custom_model_data": 10002116,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_leggings": [
+            {
+                "display_name": "Firidium Leggings",
+                "name": "firidium_leggings",
+                "icon": "firidium_leggings",
+                "custom_model_data": 10001317,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Leggings",
+                "name": "copper_leggings",
+                "icon": "copper_leggings",
+                "custom_model_data": 10002117,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_boots": [
+            {
+                "display_name": "Firidium Boots",
+                "name": "firidium_boots",
+                "icon": "firidium_boots",
+                "custom_model_data": 10001318,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Copper Boots",
+                "name": "copper_boots",
+                "icon": "copper_boots",
+                "custom_model_data": 10002118,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_ingot": [
+            {
+                "display_name": "Firidium Ingot",
+                "name": "firidium_ingot",
+                "icon": "firidium_ingot",
+                "custom_model_data": 10001321,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:iron_nugget": [
+            {
+                "display_name": "Firidium Nugget",
+                "name": "firidium_nugget",
+                "icon": "firidium_nugget",
+                "custom_model_data": 10001319,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:wooden_sword": [
+            {
+                "display_name": "Silk Sword",
+                "name": "silk_sword",
+                "icon": "silk_sword",
+                "custom_model_data": 10001410,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage0_sword",
+                "icon": "stage0_sword",
+                "custom_model_data": 10001910,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage1_sword",
+                "icon": "stage1_sword",
+                "custom_model_data": 10001911,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage2_sword",
+                "icon": "stage2_sword",
+                "custom_model_data": 10001912,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage3_sword",
+                "icon": "stage3_sword",
+                "custom_model_data": 10001913,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage4_sword",
+                "icon": "stage4_sword",
+                "custom_model_data": 10001914,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage5_sword",
+                "icon": "stage5_sword",
+                "custom_model_data": 10001915,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage6_sword",
+                "icon": "stage6_sword",
+                "custom_model_data": 10001916,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage7_sword",
+                "icon": "stage7_sword",
+                "custom_model_data": 10001917,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage8_sword",
+                "icon": "stage8_sword",
+                "custom_model_data": 10001918,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Vampire Sword",
+                "name": "stage9_sword",
+                "icon": "stage9_sword",
+                "custom_model_data": 10001919,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:wooden_axe": [
+            {
+                "display_name": "Silk Axe",
+                "name": "silk_axe",
+                "icon": "silk_axe",
+                "custom_model_data": 10001411,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:wooden_pickaxe": [
+            {
+                "display_name": "Silk Pickaxe",
+                "name": "silk_pickaxe",
+                "icon": "silk_pickaxe",
+                "custom_model_data": 10001412,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:wooden_shovel": [
+            {
+                "display_name": "Silk Shovel",
+                "name": "silk_shovel",
+                "icon": "silk_shovel",
+                "custom_model_data": 10001413,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:wooden_hoe": [
+            {
+                "display_name": "Silk Hoe",
+                "name": "silk_hoe",
+                "icon": "silk_hoe",
+                "custom_model_data": 10001414,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:compass": [
+            {
+                "display_name": "Magic Mirror",
+                "name": "magic_mirror",
+                "icon": "magic_mirror",
+                "custom_model_data": 10001519,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:bucket": [
+            {
+                "display_name": "Entity Bucket",
+                "name": "entity_bucket",
+                "icon": "entity_bucket",
+                "custom_model_data": 10001520,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:nether_wart": [
+            {
+                "display_name": "Warped Wart",
+                "name": "warped_wart",
+                "icon": "warped_wart",
+                "custom_model_data": 10001621,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:stone_sword": [
+            {
+                "display_name": "Calcite Sword",
+                "name": "calcite_sword",
+                "icon": "calcite_sword",
+                "custom_model_data": 10001010,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:stone_axe": [
+            {
+                "display_name": "Calcite Axe",
+                "name": "calcite_axe",
+                "icon": "calcite_axe",
+                "custom_model_data": 10001011,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:stone_pickaxe": [
+            {
+                "display_name": "Calcite Pickaxe",
+                "name": "calcite_pickaxe",
+                "icon": "calcite_pickaxe",
+                "custom_model_data": 10001012,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:stone_shovel": [
+            {
+                "display_name": "Calcite Shovel",
+                "name": "calcite_shovel",
+                "icon": "calcite_shovel",
+                "custom_model_data": 10001013,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:stone_hoe": [
+            {
+                "display_name": "Calcite Hoe",
+                "name": "calcite_hoe",
+                "icon": "calcite_hoe",
+                "custom_model_data": 10001014,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:ghast_tear": [
+            {
+                "display_name": "Bloody Tear",
+                "name": "bloody_tear",
+                "icon": "bloody_tear",
+                "custom_model_data": 10001722,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:light_gray_stained_glass_pane": [
+            {
+                "display_name": "",
+                "name": "inventory_part",
+                "icon": "inventory_part",
+                "custom_model_data": 8008,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 64,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:bow": [
+            {
+                "display_name": "Wild Bow",
+                "name": "wildbow_bow",
+                "icon": "wildbow_bow",
+                "custom_model_data": 10001723,
+                "allow_offhand": false,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:golden_sword": [
+            {
+                "display_name": "Wild Bow",
+                "name": "wildbow_sword",
+                "icon": "wildbow_sword",
+                "custom_model_data": 10001723,
+                "allow_offhand": false,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:totem_of_undying": [
+            {
+                "display_name": "Totem of Undying",
+                "name": "legacy_totem",
+                "icon": "legacy_totem",
+                "custom_model_data": 10002210,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Totem of Undying",
+                "name": "amongus",
+                "icon": "amongus",
+                "custom_model_data": 10002211,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Totem of Undying",
+                "name": "dantdmtotem",
+                "icon": "dantdmtotem",
+                "custom_model_data": 10002212,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Totem of Undying",
+                "name": "technototem",
+                "icon": "technototem",
+                "custom_model_data": 10002213,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Totem of Undying",
+                "name": "creepertotem",
+                "icon": "creepertotem",
+                "custom_model_data": 10002214,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Totem of Undying",
+                "name": "herobrinetotem",
+                "icon": "herobrinetotem",
+                "custom_model_data": 10002215,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:book": [
+            {
+                "display_name": "Hitman Techniques Book",
+                "name": "htbook",
+                "icon": "htbook",
+                "custom_model_data": 10001822,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:firework_star": [
+            {
+                "display_name": "Vein Miner's essence",
+                "name": "vein_essence",
+                "icon": "vein_essence",
+                "custom_model_data": 10001212,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Firidium essence",
+                "name": "autosmelt_essence",
+                "icon": "autosmelt_essence",
+                "custom_model_data": 10001312,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Lucky Horseshoe",
+                "name": "lucky_horseshoe",
+                "icon": "lucky_horseshoe",
+                "custom_model_data": 10001814,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Flower Boots",
+                "name": "flowerboots",
+                "icon": "flowerboots",
+                "custom_model_data": 10001815,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Cobalt Shield",
+                "name": "cobalt_shield",
+                "icon": "cobalt_shield",
+                "custom_model_data": 10001816,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Cloud in a Bottle",
+                "name": "cloudinabottle",
+                "icon": "cloudinabottle",
+                "custom_model_data": 10001817,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Hermes Boots",
+                "name": "hermesboots",
+                "icon": "hermesboots",
+                "custom_model_data": 10001818,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Contaminated Membrane",
+                "name": "contaminated_membrane",
+                "icon": "contaminated_membrane",
+                "custom_model_data": 10001819,
+                "allow_offhand": true,
+                "is_tool": false,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ],
+        "minecraft:stick": [
+            {
+                "display_name": "stick",
+                "name": "stick",
+                "icon": "stick",
+                "custom_model_data": 10001711,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            },
+            {
+                "display_name": "Bluebellsar Stick",
+                "name": "bluebellsar_stick",
+                "icon": "stick",
+                "custom_model_data": 10001722,
+                "allow_offhand": true,
+                "is_tool": true,
+                "is_hat": false,
+                "texture_data": 16,
+                "creative_category": 1
+            }
+        ]
+    }
+}

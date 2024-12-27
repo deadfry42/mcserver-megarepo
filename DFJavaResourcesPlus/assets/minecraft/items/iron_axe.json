@@ -1,0 +1,33 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/iron_axe"
+      },
+      "entries": [
+        {
+          "threshold": 10002111,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/copper/copper_axe"
+          }
+        },
+        {
+          "threshold": 10001311,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/firidium/firidium_axe"
+          }
+        },
+        {
+          "threshold": 10001211,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/vein_tools/vein_axe"
+          }
+        }
+      ]
+    }
+  }

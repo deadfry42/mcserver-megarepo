@@ -2,305 +2,240 @@ package uk.co.nikodem.dFSmpPlugin.Content.CustomItems;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Sound;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.components.EquippableComponent;
+import org.bukkit.persistence.PersistentDataType;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 public class CustomItemManager {
-    public static ItemStack createMagicMirror() {
-        ItemStack magicMirror = new ItemStack(Material.COMPASS);
-        ItemMeta magicMirrorMeta = magicMirror.getItemMeta();
-        assert magicMirrorMeta != null;
-        List<String> lores = new ArrayList<>();
-        magicMirrorMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&5Magic Mirror"));
-        lores.add(ChatColor.translateAlternateColorCodes('&', "&6Teleports you back to your bed."));
-        lores.add(ChatColor.translateAlternateColorCodes('&', "&cWill not work in combat."));
-        magicMirrorMeta.setLore(lores);
-        magicMirrorMeta.setCustomModelData(10101);
-        magicMirrorMeta.addEnchant(Enchantment.LOYALTY, 100, true);
-        magicMirrorMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        magicMirror.setItemMeta(magicMirrorMeta);
-        return magicMirror;
+
+    public enum IdItemType {
+        CALCITE,
+        OBSIDIAN,
+        VEIN,
+        AUTOSMELT,
+        SILK,
+        ETC,
+        PLANTS,
+        REQUESTED,
+        ACCESSORY,
+        PROGRESS_SWORD,
+        GUN,
+        COPPER,
+        TOTEMS,
+        SCULK,
+        UNDEFINED;
     }
 
-    public static ItemStack createWarpedWart() {
-        ItemStack warpedWart = new ItemStack(Material.NETHER_WART);
-        ItemMeta warpedWartMeta = warpedWart.getItemMeta();
-        assert warpedWartMeta != null;
-        List<String> lores = new ArrayList<>();
-        warpedWartMeta.setDisplayName("Warped Wart");
-        warpedWartMeta.setLore(lores);
-        warpedWartMeta.setCustomModelData(6969);
-        warpedWart.setItemMeta(warpedWartMeta);
-        return warpedWart;
+    public enum IdItemClass {
+        SWORD,
+        AXE,
+        PICKAXE,
+        SHOVEL,
+        HOE,
+        HELMET,
+        CHESTPLATE,
+        LEGGINGS,
+        BOOTS,
+        MAGICMIRROR,
+        ENTITYBUCKET,
+        WARPEDWART,
+        OTHERMELEE,
+        BOW,
+        UNDEFINED;
     }
 
-    public static ItemStack createEntityBucket() {
-        ItemStack entityBucket = new ItemStack(Material.BUCKET);
-        ItemMeta entityBucketMeta = entityBucket.getItemMeta();
-        assert entityBucketMeta != null;
-        List<String> lores = new ArrayList<>();
-        entityBucketMeta.setDisplayName("Entity Bucket");
-        entityBucketMeta.setLore(lores);
-        entityBucketMeta.setCustomModelData(6969);
-        entityBucket.setItemMeta(entityBucketMeta);
-        return entityBucket;
+    public static int getCustomID(IdItemType iitype, IdItemClass iiclass) {
+        int id = 10000000;
+        switch (iitype) {
+            case CALCITE -> id += 1000;
+            case OBSIDIAN -> id += 1100;
+            case VEIN -> id += 1200;
+            case AUTOSMELT -> id += 1300;
+            case SILK -> id += 1400;
+            case ETC -> id += 1500;
+            case PLANTS -> id += 1600;
+            case REQUESTED -> id += 1700;
+            case ACCESSORY -> id += 1800;
+            case PROGRESS_SWORD -> id += 1900;
+            case GUN -> id += 2000;
+            case COPPER -> id += 2100;
+            case TOTEMS -> id += 2200;
+            case SCULK -> id += 2300;
+            case UNDEFINED -> id += 9900;
+        }
+        switch (iiclass) {
+            case SWORD -> id += 10;
+            case AXE -> id += 11;
+            case PICKAXE -> id += 12;
+            case SHOVEL -> id += 13;
+            case HOE -> id += 14;
+            case HELMET -> id += 15;
+            case CHESTPLATE -> id += 16;
+            case LEGGINGS -> id += 17;
+            case BOOTS -> id += 18;
+            case MAGICMIRROR -> id += 19;
+            case ENTITYBUCKET -> id += 20;
+            case WARPEDWART -> id += 21;
+            case OTHERMELEE -> id += 22;
+            case BOW -> id += 23;
+            case UNDEFINED -> id += 99;
+        }
+        return id;
     }
 
-//    public static ItemStack createMiningHelmet() {
-//        ItemStack miningHelmet = new ItemStack(Material.LEATHER_HELMET);
-//        LeatherArmorMeta miningHelmetMeta = (LeatherArmorMeta) miningHelmet.getItemMeta();
-//        assert miningHelmetMeta != null;
-//        miningHelmetMeta.setColor(Color.YELLOW);
-//        List<String> lores = new ArrayList<String>();
-//        miningHelmetMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6Mining Helmet"));
-//        lores.add(ChatColor.translateAlternateColorCodes('&', "&5Lights up the area."));
-//        miningHelmetMeta.setLore(lores);
-//        miningHelmetMeta.setCustomModelData(8008);
-//        miningHelmet.setItemMeta(miningHelmetMeta);
-//        return miningHelmet;
-//    }
-
-    public static ItemStack createCalciteSword() {
-        ItemStack calciteSword = new ItemStack(Material.STONE_SWORD, 1);
-        ItemMeta calciteSwordMeta = calciteSword.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteSwordMeta != null;
-        calciteSwordMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Sword"));
-        lores.add("A very light sword.");
-        calciteSwordMeta.setLore(lores);
-        calciteSwordMeta.setCustomModelData(6969);
-        calciteSwordMeta.addEnchant(Enchantment.DURABILITY, 1, true);
-        calciteSword.setItemMeta(calciteSwordMeta);
-        return calciteSword;
+    public static ItemStack modifyAttribute(ItemStack i, Attribute a, AttributeModifier am) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.addAttributeModifier(a, am);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createCalciteAxe() {
-        ItemStack calciteAxe = new ItemStack(Material.STONE_AXE, 1);
-        ItemMeta calciteAxeMeta = calciteAxe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteAxeMeta != null;
-        calciteAxeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Axe"));
-        lores.add("A very light axe.");
-        calciteAxeMeta.setLore(lores);
-        calciteAxeMeta.setCustomModelData(6969);
-        calciteAxeMeta.addEnchant(Enchantment.DURABILITY, 1, true);
-        calciteAxe.setItemMeta(calciteAxeMeta);
-        return calciteAxe;
+    public static ItemStack enchantItem(ItemStack i, Enchantment e, int lvl) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.addEnchant(e, lvl, true);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createCalcitePickaxe() {
-        ItemStack calcitePickaxe = new ItemStack(Material.STONE_PICKAXE, 1);
-        ItemMeta calcitePickaxeMeta = calcitePickaxe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calcitePickaxeMeta != null;
-        calcitePickaxeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Pickaxe"));
-        lores.add("A very light pickaxe.");
-        calcitePickaxeMeta.setLore(lores);
-        calcitePickaxeMeta.setCustomModelData(6969);
-        calcitePickaxeMeta.addEnchant(Enchantment.DURABILITY, 1, true);
-        calcitePickaxe.setItemMeta(calcitePickaxeMeta);
-        return calcitePickaxe;
+    public static ItemStack enchantItem(ItemStack i, Enchantment e) {
+        return enchantItem(i, e, 1);
     }
 
-    public static ItemStack createCalciteShovel() {
-        ItemStack calciteShovel = new ItemStack(Material.STONE_SHOVEL, 1);
-        ItemMeta calciteShovelMeta = calciteShovel.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteShovelMeta != null;
-        calciteShovelMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Shovel"));
-        lores.add("A very light shovel.");
-        calciteShovelMeta.setLore(lores);
-        calciteShovelMeta.setCustomModelData(6969);
-        calciteShovelMeta.addEnchant(Enchantment.DURABILITY, 1, true);
-        calciteShovel.setItemMeta(calciteShovelMeta);
-        return calciteShovel;
+    public static ItemStack massEnchantItem(ItemStack i, Enchantment... enchantments) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        for (Enchantment e : enchantments) {
+            im.addEnchant(e, 1, true);
+        }
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createCalciteHoe() {
-        ItemStack calciteHoe = new ItemStack(Material.STONE_HOE, 1);
-        ItemMeta calciteHoeMeta = calciteHoe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteHoeMeta != null;
-        calciteHoeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Hoe"));
-        lores.add("A very light hoe.");
-        calciteHoeMeta.setLore(lores);
-        calciteHoeMeta.setCustomModelData(6969);
-        calciteHoeMeta.addEnchant(Enchantment.DURABILITY, 1, true);
-        calciteHoe.setItemMeta(calciteHoeMeta);
-        return calciteHoe;
+    public static ItemStack hideEnchantments(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createCalciteHelmet() {
-        ItemStack calciteHelmet = new ItemStack(Material.CHAINMAIL_HELMET, 1);
-        ItemMeta calciteHelmetMeta = calciteHelmet.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteHelmetMeta != null;
-        calciteHelmetMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Helmet"));
-        calciteHelmetMeta.setLore(lores);
-        calciteHelmetMeta.setCustomModelData(6969);
-        calciteHelmetMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
-        calciteHelmet.setItemMeta(calciteHelmetMeta);
-        return calciteHelmet;
+    public static boolean isMarkedForUUID(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return false;
+        return Boolean.TRUE.equals(im.getPersistentDataContainer().get(new NamespacedKey("dfsmp", "markeduuid"), PersistentDataType.BOOLEAN));
     }
 
-    public static ItemStack createCalciteChestplate() {
-        ItemStack calciteChestplate = new ItemStack(Material.CHAINMAIL_CHESTPLATE, 1);
-        ItemMeta calciteChestplateMeta = calciteChestplate.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteChestplateMeta != null;
-        calciteChestplateMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Chestplate"));
-        calciteChestplateMeta.setLore(lores);
-        calciteChestplateMeta.setCustomModelData(6969);
-        calciteChestplateMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
-        calciteChestplate.setItemMeta(calciteChestplateMeta);
-        return calciteChestplate;
+    public static ItemStack removeMarkedForUUID(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.getPersistentDataContainer().remove(new NamespacedKey("dfsmp", "markeduuid"));
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createCalciteLeggings() {
-        ItemStack calciteLeggings = new ItemStack(Material.CHAINMAIL_LEGGINGS, 1);
-        ItemMeta calciteLeggingsMeta = calciteLeggings.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteLeggingsMeta != null;
-        calciteLeggingsMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Leggings"));
-        calciteLeggingsMeta.setLore(lores);
-        calciteLeggingsMeta.setCustomModelData(6969);
-        calciteLeggingsMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
-        calciteLeggings.setItemMeta(calciteLeggingsMeta);
-        return calciteLeggings;
+    public static ItemStack addMarkedForUUID(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.getPersistentDataContainer().set(new NamespacedKey("dfsmp", "markeduuid"), PersistentDataType.BOOLEAN, true);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createCalciteBoots() {
-        ItemStack calciteBoots = new ItemStack(Material.CHAINMAIL_BOOTS, 1);
-        ItemMeta calciteBootsMeta = calciteBoots.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert calciteBootsMeta != null;
-        calciteBootsMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "Calcite Boots"));
-        calciteBootsMeta.setLore(lores);
-        calciteBootsMeta.setCustomModelData(6969);
-        calciteBootsMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
-        calciteBoots.setItemMeta(calciteBootsMeta);
-        return calciteBoots;
+    public static ItemStack addUUIDToItem(ItemStack i, String uuid) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        if (uuid == null) uuid = UUID.randomUUID().toString();
+        im.getPersistentDataContainer().set(new NamespacedKey("dfsmp", "uuid"), PersistentDataType.STRING, uuid);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createObsidianPickaxe() {
-        ItemStack obsidianPickaxe = new ItemStack(Material.NETHERITE_PICKAXE, 1);
-        ItemMeta obsidianPickaxeMeta = obsidianPickaxe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert obsidianPickaxeMeta != null;
-        obsidianPickaxeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&5Obsidian Pickaxe"));
-        obsidianPickaxeMeta.setLore(lores);
-        obsidianPickaxeMeta.setCustomModelData(8008);
-        obsidianPickaxeMeta.addEnchant(Enchantment.DURABILITY, 10, true);
-        obsidianPickaxe.setItemMeta(obsidianPickaxeMeta);
-        return obsidianPickaxe;
+    public static ItemStack addUUIDToItem(ItemStack i) {
+        String uuid = UUID.randomUUID().toString();
+        return addUUIDToItem(i, uuid);
     }
 
-    public static ItemStack createObsidianAxe() {
-        ItemStack obsidianAxe = new ItemStack(Material.NETHERITE_AXE, 1);
-        ItemMeta obsidianAxeMeta = obsidianAxe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert obsidianAxeMeta != null;
-        obsidianAxeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&5Obsidian Axe"));
-        obsidianAxeMeta.setLore(lores);
-        obsidianAxeMeta.setCustomModelData(8008);
-        obsidianAxeMeta.addEnchant(Enchantment.DURABILITY, 10, true);
-        obsidianAxe.setItemMeta(obsidianAxeMeta);
-        return obsidianAxe;
+    public static ItemStack addAccessoryId(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        return im.hasCustomModelData() ? addAccessoryId(i, im.getCustomModelData()) : i;
     }
 
-    public static ItemStack createVeinPickaxe() {
-        ItemStack veinPickaxe = new ItemStack(Material.IRON_PICKAXE, 1);
-        ItemMeta veinPickaxeMeta = veinPickaxe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert veinPickaxeMeta != null;
-        veinPickaxeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&5Vein Miner's Pickaxe"));
-        lores.add(ChatColor.translateAlternateColorCodes('&', "&dA powerful pickaxe from a well-respected miner."));
-        veinPickaxeMeta.setLore(lores);
-        veinPickaxeMeta.setCustomModelData(8008);
-        veinPickaxe.setItemMeta(veinPickaxeMeta);
-        return veinPickaxe;
+    public static ItemStack addAccessoryId(ItemStack i, int id) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.getPersistentDataContainer().set(new NamespacedKey("dfsmp", "isaccessory"), PersistentDataType.INTEGER, id);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createVeinAxe() {
-        ItemStack veinAxe = new ItemStack(Material.IRON_AXE, 1);
-        ItemMeta veinAxeMeta = veinAxe.getItemMeta();
-        List<String> lores = new ArrayList<>();
-        assert veinAxeMeta != null;
-        veinAxeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&5Vein Miner's Axe"));
-        lores.add(ChatColor.translateAlternateColorCodes('&', "&dA powerful axe from a well-respected miner."));
-        veinAxeMeta.setLore(lores);
-        veinAxeMeta.setCustomModelData(8008);
-        veinAxe.setItemMeta(veinAxeMeta);
-        return veinAxe;
+    @Nullable
+    public static Integer getAccessoryId(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return null;
+        return im.getPersistentDataContainer().get(new NamespacedKey("dfsmp", "isaccessory"), PersistentDataType.INTEGER);
     }
 
-    public static ItemStack createSilkSword() {
-        ItemStack silkSword = new ItemStack(Material.WOODEN_SWORD, 1);
-        ItemMeta silSwordMeta = silkSword.getItemMeta();
-        assert silSwordMeta != null;
-        silSwordMeta.setDisplayName("Silk Sword");
-        silSwordMeta.setCustomModelData(8008);
-        silSwordMeta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
-        silkSword.setItemMeta(silSwordMeta);
-        return silkSword;
+    @Nullable
+    public static String getItemUUID(ItemStack i) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return null;
+        return im.getPersistentDataContainer().get(new NamespacedKey("dfsmp", "uuid"), PersistentDataType.STRING);
     }
 
-    public static ItemStack createSilkAxe() {
-        ItemStack silkAxe = new ItemStack(Material.WOODEN_AXE, 1);
-        ItemMeta silkAxeMeta = silkAxe.getItemMeta();
-        assert silkAxeMeta != null;
-        silkAxeMeta.setDisplayName("Silk Axe");
-        silkAxeMeta.setCustomModelData(8008);
-        silkAxeMeta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
-        silkAxe.setItemMeta(silkAxeMeta);
-        return silkAxe;
+    public static ItemStack setCustomId(ItemStack i, int id) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        im.setCustomModelData(id);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createSilkPickaxe() {
-        ItemStack silkPickaxe = new ItemStack(Material.WOODEN_PICKAXE, 1);
-        ItemMeta silkPickaxeMeta = silkPickaxe.getItemMeta();
-        assert silkPickaxeMeta != null;
-        silkPickaxeMeta.setDisplayName("Silk Pickaxe");
-        silkPickaxeMeta.setCustomModelData(8008);
-        silkPickaxeMeta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
-        silkPickaxe.setItemMeta(silkPickaxeMeta);
-        return silkPickaxe;
+    public static ItemStack setModel(ItemStack i, String key, EquipmentSlot slot) {
+        return setModel(i, key, slot, Sound.ITEM_ARMOR_EQUIP_IRON);
     }
 
-    public static ItemStack createSilkShovel() {
-        ItemStack silkShovel = new ItemStack(Material.WOODEN_SHOVEL, 1);
-        ItemMeta silkShovelMeta = silkShovel.getItemMeta();
-        assert silkShovelMeta != null;
-        silkShovelMeta.setDisplayName("Silk Shovel");
-        silkShovelMeta.setCustomModelData(8008);
-        silkShovelMeta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
-        silkShovel.setItemMeta(silkShovelMeta);
-        return silkShovel;
+    public static ItemStack setModel(ItemStack i, String key, EquipmentSlot slot, Sound equipSound) {
+        ItemMeta im = i.getItemMeta();
+        if (im == null) return i;
+        EquippableComponent e = im.getEquippable();
+        if (e == null) return i;
+        e.setModel(new NamespacedKey("dfjr", key));
+        e.setSlot(slot);
+        e.setEquipSound(equipSound);
+        im.setEquippable(e);
+        i.setItemMeta(im);
+        return i;
     }
 
-    public static ItemStack createSilkHoe() {
-        ItemStack silkHoe = new ItemStack(Material.WOODEN_HOE, 1);
-        ItemMeta silkHoeMeta = silkHoe.getItemMeta();
-        assert silkHoeMeta != null;
-        silkHoeMeta.setDisplayName("Silk Hoe");
-        silkHoeMeta.setCustomModelData(8008);
-        silkHoeMeta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
-        silkHoe.setItemMeta(silkHoeMeta);
-        return silkHoe;
+    public static ItemStack setAmount(ItemStack i, int amount) {
+        i.setAmount(amount);
+        return i;
     }
 
     public static ItemStack createCustomItem(ItemStack base, String name, int model, List<String> lores) {
         ItemStack customItem = base;
         ItemMeta customItemMeta = customItem.getItemMeta();
         assert customItemMeta != null;
-        customItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+        customItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', ChatColor.RESET + name));
         customItemMeta.setCustomModelData(model);
+        customItemMeta.setLore(lores);
         customItem.setItemMeta(customItemMeta);
         return customItem;
     }
@@ -309,6 +244,7 @@ public class CustomItemManager {
         ItemStack customItem = base;
         ItemMeta customItemMeta = customItem.getItemMeta();
         assert customItemMeta != null;
+        customItemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', ChatColor.RESET + name));
         customItemMeta.setCustomModelData(model);
         customItem.setItemMeta(customItemMeta);
         return customItem;
@@ -319,27 +255,31 @@ public class CustomItemManager {
     }
 
     public static ItemStack createCustomItem(Material base, int amount, String name, int model, String... lores) {
-        return createCustomItem(new ItemStack(base, amount), name, model, Arrays.stream(lores).toList());
+        return createCustomItem(new ItemStack(base, amount), name, model, SDDtoList(lores));
     }
 
     public static ItemStack createCustomItem(Material base, String name, int model, String... lores) {
-        return createCustomItem(new ItemStack(base), name, model, Arrays.stream(lores).toList());
+        return createCustomItem(new ItemStack(base), name, model, SDDtoList(lores));
     }
 
     public static ItemStack createCustomItem(Material base, int amount, String name, String... lores) {
-        return createCustomItem(new ItemStack(base, amount), name, 0, Arrays.stream(lores).toList());
+        return createCustomItem(new ItemStack(base, amount), name, 0, SDDtoList(lores));
     }
 
     public static ItemStack createCustomItem(Material base, String name, String... lores) {
-        return createCustomItem(new ItemStack(base), name, 0, Arrays.stream(lores).toList());
+        return createCustomItem(new ItemStack(base), name, 0, SDDtoList(lores));
     }
 
     public static ItemStack createCustomItem(Material base, String... lores) {
-        return createCustomItem(new ItemStack(base), base.name(), 0, Arrays.stream(lores).toList());
+        return createCustomItem(new ItemStack(base), base.name(), 0, SDDtoList(lores));
     }
 
     public static ItemStack createCustomItem(Material base) {
         return createCustomItem(new ItemStack(base), base.name(), 0);
+    }
+
+    public static List<String> SDDtoList(String... lores) {
+        return new ArrayList<>(Arrays.asList(lores));
     }
 
     public static boolean IsItem(ItemStack itemToCheck, ItemStack customItem) {

@@ -1,0 +1,30 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "geyser_custom:copper_boots.player",
+            "item": { "geyser_custom:firidium_boots": "query.owner_identifier == 'minecraft:player'" },
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/models/armour/copper_main",
+                "enchanted": "textures/misc/enchanted_actor_glint"
+            },
+            "geometry": {
+                "default": "geometry.player.armor.boots"
+            },
+            "scripts": {
+                "parent_setup": "v.chest_layer_visible = 0.0;",
+                "animate": [
+                    "offset"
+                ]
+            },
+            "animations": {
+                "offset": "animation.armor.boots.offset"
+            },
+            "render_controllers": ["controller.render.armor"]
+        }
+    }
+}

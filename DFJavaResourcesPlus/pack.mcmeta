@@ -1,0 +1,7 @@
+{
+  "pack": {
+    "description": "DFJavaResourcesPlus - Custom content (1.21.2-1.21.4)",
+    "pack_format": 46,
+    "supported_formats": { "min_inclusive": 42, "max_inclusive": 46 }
+  }
+}

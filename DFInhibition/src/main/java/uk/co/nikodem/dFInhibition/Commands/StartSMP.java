@@ -44,7 +44,7 @@ public class StartSMP implements CommandExecutor {
                     plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4PVP will be enabled in 1 day!"));
                     plr.sendTitle(ChatColor.translateAlternateColorCodes('&', "The SMP has begun!"), "good luck :)");
                 }
-                Bukkit.dispatchCommand(commandSender, "worldborder set 10000 10");
+                Bukkit.dispatchCommand(commandSender, "worldborder set 2000 10");
                 Bukkit.dispatchCommand(commandSender, "clear @a");
                 Bukkit.dispatchCommand(commandSender, "effect clear @a");
                 config.set("locked", false);
@@ -53,6 +53,7 @@ public class StartSMP implements CommandExecutor {
                 Bukkit.dispatchCommand(commandSender, "effect give @a minecraft:resistance 5 255");
                 Bukkit.dispatchCommand(commandSender, "time set day");
                 Bukkit.dispatchCommand(commandSender, "weather clear");
+                Bukkit.dispatchCommand(commandSender, "gamerule keepInventory true");
 
                 scheduler.cancelTask(task.getTaskId());
             } else {

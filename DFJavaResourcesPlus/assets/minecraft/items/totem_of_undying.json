@@ -1,0 +1,54 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/totem_of_undying"
+    },
+    "entries": [
+      {
+        "threshold": 10002210,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/totems/legacy_totem"
+        }
+      },
+      {
+        "threshold": 10002211,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/totems/amongus"
+        }
+      },
+      {
+        "threshold": 10002212,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/totems/dantdmtotem"
+        }
+      },
+      {
+        "threshold": 10002213,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/totems/technototem"
+        }
+      },
+      {
+        "threshold": 10002214,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/totems/creepertotem"
+        }
+      },
+      {
+        "threshold": 10002215,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/totems/herobrinetotem"
+        }
+      }
+    ]
+  }
+}

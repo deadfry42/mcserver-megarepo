@@ -19,7 +19,7 @@ public class OnLeave implements Listener {
 
     @EventHandler
     public void OnPlayerLeave(PlayerQuitEvent e) {
-        if (BasicModeManager.basicMode) return;
+        if (BasicModeManager.isBasicMode()) return;
         Player plr = e.getPlayer();
         if (CombatLoggingManager.playerInCombat(plr)) {
             plr.setHealth(0);

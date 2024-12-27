@@ -1,0 +1,30 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "DFBedrockResources - The resource pack that powers the custom content (for Bedrock edition)!",
+        "name": "DFBedrockResources",
+        "uuid": "24272e3d-812a-4270-9cf4-ce11f663d3d8",
+        "version": [
+            0,
+            0,
+            50
+        ],
+        "min_engine_version": [
+            1,
+            18,
+            3
+        ]
+    },
+    "modules": [
+        {
+            "description": "DFBedrockResources - The resource pack that powers the custom content (for Bedrock edition)!",
+            "type": "resources",
+            "uuid": "10847759-ae6f-4e7e-ad4f-c4b48dbbacde",
+            "version": [
+                1,
+                0,
+                20
+            ]
+        }
+    ]
+}

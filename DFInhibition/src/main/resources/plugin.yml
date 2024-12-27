@@ -1,5 +1,5 @@
 name: DFInhibition
-version: '1.0-SNAPSHOT'
+version: '1.1.0'
 main: uk.co.nikodem.dFInhibition.DFInhibition
 api-version: '1.20'
 commands:
@@ -9,9 +9,6 @@ commands:
   prepsmp:
     description: "Preps the world for SMP. Needs to be ran from the console."
     usage: "/prepsmp"
-  milestones:
-    description: "Shows you how long until a feature is enabled."
-    usage: "/milestones"
   enablepvp:
     description: "Enables pvp. Needs to be ran from the console."
     usage: "/enablepvp"
@@ -21,3 +18,15 @@ commands:
   enableend:
     description: "Enables the end. Needs to be ran from the console."
     usage: "/enableend"
+  disableinv:
+    description: "Disables keep inventory. Needs to be ran from the console."
+    usage: "/disableinv"
+  setwb1:
+    description: "Sets world border to position 1. Needs to be ran from the console."
+    usage: "/setwb1"
+  setwb2:
+    description: "Sets world border to position 2. Needs to be ran from the console."
+    usage: "/setwb2"
+  setwb3:
+    description: "Sets world border to position 3. Needs to be ran from the console."
+    usage: "/setwb3"

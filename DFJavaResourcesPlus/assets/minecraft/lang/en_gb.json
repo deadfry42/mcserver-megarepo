@@ -1,0 +1,23 @@
+{
+  "item.minecraft.music_disc_13": "Music Disc",
+  "item.minecraft.music_disc_13.desc": "KSI - Thick of it",
+  "item.minecraft.music_disc_11": "Music Disc",
+  "item.minecraft.music_disc_11.desc": "Surf Curse - i am just a fish",
+  "item.minecraft.music_disc_blocks": "Music Disc",
+  "item.minecraft.music_disc_blocks.desc": "Sebastian - i like to scream",
+  "item.minecraft.music_disc_mall": "Music Disc",
+  "item.minecraft.music_disc_mall.desc": "Mao zedong - The sun in the sky is red",
+  "item.minecraft.music_disc_far": "Music Disc",
+  "item.minecraft.music_disc_far.desc": "tallyhall - Banana Man",
+  "item.minecraft.music_disc_ward": "Music Disc",
+  "item.minecraft.music_disc_ward.desc": "Joel Merry - Whistle",
+  "jukebox_song.minecraft.11": "Surf Curse - i am just a fish",
+  "jukebox_song.minecraft.13": "KSI - Thick of it",
+  "jukebox_song.minecraft.blocks": "Sebastian - i like to scream",
+  "jukebox_song.minecraft.mall": "Mao zedong - The sun in the sky is red",
+  "jukebox_song.minecraft.far": "tallyhall - Banana Man",
+  "jukebox_song.minecraft.ward": "Joel Merry - Whistle",
+  "menu.disconnect": "Exit Server",
+  "menu.game": "Server Menu",
+  "enchantment.level.25": "25"
+}

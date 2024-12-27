@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/netherite_axe"
+    },
+    "entries": [
+      {
+        "threshold": 10001111,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/obsidian/obsidian_axe"
+        }
+      }
+    ]
+  }
+}

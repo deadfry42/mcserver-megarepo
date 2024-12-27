@@ -1,0 +1,19 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/wooden_sword"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001410}, "model": "dfjr:item/silk_tools/silk_sword"},
+        {"predicate": {"custom_model_data": 10001910}, "model": "dfjr:item/progress_sword/stage0_sword"},
+        {"predicate": {"custom_model_data": 10001911}, "model": "dfjr:item/progress_sword/stage1_sword"},
+        {"predicate": {"custom_model_data": 10001912}, "model": "dfjr:item/progress_sword/stage2_sword"},
+        {"predicate": {"custom_model_data": 10001913}, "model": "dfjr:item/progress_sword/stage3_sword"},
+        {"predicate": {"custom_model_data": 10001914}, "model": "dfjr:item/progress_sword/stage4_sword"},
+        {"predicate": {"custom_model_data": 10001915}, "model": "dfjr:item/progress_sword/stage5_sword"},
+        {"predicate": {"custom_model_data": 10001916}, "model": "dfjr:item/progress_sword/stage6_sword"},
+        {"predicate": {"custom_model_data": 10001917}, "model": "dfjr:item/progress_sword/stage7_sword"},
+        {"predicate": {"custom_model_data": 10001918}, "model": "dfjr:item/progress_sword/stage8_sword"},
+        {"predicate": {"custom_model_data": 10001919}, "model": "dfjr:item/progress_sword/stage9_sword"}
+    ]
+}

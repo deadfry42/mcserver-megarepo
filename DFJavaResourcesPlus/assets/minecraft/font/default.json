@@ -1,0 +1,137 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/skull.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/cold_sunglasses.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/sob.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/flag_pl.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/sunglasses.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/smile.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/money_mouth.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/pray.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/3_hearts.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/smirk_cat.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/cold_face.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/speaking_head.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/fire.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/fish.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/moai.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/thumbs_up.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/salute.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/shrug.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    },
+        {
+            "type": "bitmap",
+            "file": "dfjr:emojis/wompwomp.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [""]
+	    }
+    ]
+}

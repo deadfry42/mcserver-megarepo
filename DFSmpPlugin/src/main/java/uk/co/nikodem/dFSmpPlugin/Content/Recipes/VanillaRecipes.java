@@ -1,14 +1,10 @@
 package uk.co.nikodem.dFSmpPlugin.Content.Recipes;
 
 import org.bukkit.Material;
+import org.bukkit.Tag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.Recipe;
-import uk.co.nikodem.dFSmpPlugin.Content.CustomItems.SetBonuses;
+import org.bukkit.inventory.RecipeChoice;
 import uk.co.nikodem.dFSmpPlugin.DFSmpPlugin;
-
-import java.util.Iterator;
-
-import static org.bukkit.Bukkit.getServer;
 
 public class VanillaRecipes extends RecipeCreator {
 
@@ -25,6 +21,28 @@ public class VanillaRecipes extends RecipeCreator {
         chainmail();
         horseArmour();
         coral();
+        slimeBlockChange();
+        dispenserChange();
+    }
+
+    private void dispenserChange() {
+        RemoveRecipesWithResult(RecipeType.ANYCRAFTING, Material.DISPENSER);
+        RegisterRecipe(
+                createShapedRecipe(Material.DISPENSER)
+                        .shape("CCC", "CIC", "CSC")
+                        .setIngredient('C', new RecipeChoice.MaterialChoice(Tag.ITEMS_STONE_TOOL_MATERIALS))
+                        .setIngredient('I', new RecipeChoice.ExactChoice(new ItemStack(Material.IRON_INGOT)))
+                        .setIngredient('S', Material.REDSTONE)
+        );
+    }
+
+    private void slimeBlockChange() {
+        RemoveRecipesWithResult(RecipeType.ANYCRAFTING, Material.SLIME_BLOCK);
+        RegisterRecipe(
+                createShapedRecipe(Material.SLIME_BLOCK)
+                        .shape("XX", "XX")
+                        .setIngredient('X', Material.SLIME_BALL)
+        );
     }
 
     private void chainmail() {
@@ -91,10 +109,10 @@ public class VanillaRecipes extends RecipeCreator {
 
         RegisterRecipe(
                 createShapedRecipe(Material.TRIDENT)
-                        .shape("III", "DXD", " D ")
+                        .shape("DID", "DSD", " S ")
                         .setIngredient('D', Material.DIAMOND)
-                        .setIngredient('X', Material.PRISMARINE_SHARD)
-                        .setIngredient('I', Material.IRON_INGOT)
+                        .setIngredient('S', Material.STICK)
+                        .setIngredient('I', Material.IRON_NUGGET)
         );
     }
 

@@ -1,0 +1,17 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/firework_star",
+        "layer1": "item/firework_star_overlay"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001212}, "model": "dfjr:item/accessory/vein_essence"},
+        {"predicate": {"custom_model_data": 10001312}, "model": "dfjr:item/accessory/autosmelt_essence"},
+        {"predicate": {"custom_model_data": 10001814}, "model": "dfjr:item/accessory/lucky_horseshoe"},
+        {"predicate": {"custom_model_data": 10001815}, "model": "dfjr:item/accessory/flowerboots"},
+        {"predicate": {"custom_model_data": 10001816}, "model": "dfjr:item/accessory/cobalt_shield"},
+        {"predicate": {"custom_model_data": 10001817}, "model": "dfjr:item/accessory/cloudinabottle"},
+        {"predicate": {"custom_model_data": 10001818}, "model": "dfjr:item/accessory/hermesboots"},
+        {"predicate": {"custom_model_data": 10001819}, "model": "dfjr:item/accessory/contaminated_membrane"}
+    ]
+}

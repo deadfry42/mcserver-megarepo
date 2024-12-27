@@ -1,6 +1,7 @@
 package uk.co.nikodem.dFSmpPlugin.Content.Events;
 
 import org.bukkit.Material;
+import org.bukkit.entity.GlowItemFrame;
 import org.bukkit.entity.ItemFrame;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,8 +13,8 @@ import uk.co.nikodem.dFSmpPlugin.Content.Utils.BasicModeManager;
 
 public class DragonEggPrevention implements Listener {
     @EventHandler
-    public void InventoryMovePrevention(InventoryClickEvent event) {
-        if (BasicModeManager.basicMode) return;
+    public void PreventMovingEnderDragonInInventory(InventoryClickEvent event) {
+        if (BasicModeManager.isBasicMode()) return;
         Inventory clicked = event.getClickedInventory();
         if (event.getClick().isShiftClick()) {
             if (clicked == event.getWhoClicked().getInventory()) {
@@ -38,7 +39,7 @@ public class DragonEggPrevention implements Listener {
 
     @EventHandler
     public void InventoryDragPrevention(InventoryDragEvent event) {
-        if (BasicModeManager.basicMode) return;
+        if (BasicModeManager.isBasicMode()) return;
         ItemStack dragged = event.getOldCursor(); // This is the item that is being dragged
 
         if (dragged.getType() == Material.DRAGON_EGG) {
@@ -54,16 +55,8 @@ public class DragonEggPrevention implements Listener {
     }
 
     @EventHandler
-    public void InventoryDragPrevention(InventoryMoveItemEvent event) {
-        if (BasicModeManager.basicMode) return;
-        if (event.getItem().getType() == Material.DRAGON_EGG) {
-            event.setCancelled(true);
-        }
-    }
-
-    @EventHandler
     public void HopperPickupPrevention(InventoryPickupItemEvent event) {
-        if (BasicModeManager.basicMode) return;
+        if (BasicModeManager.isBasicMode()) return;
         if (event.getInventory().getType() == InventoryType.HOPPER) {
             if (event.getItem().getItemStack().getType() == Material.DRAGON_EGG) event.setCancelled(true);
         }
@@ -71,8 +64,8 @@ public class DragonEggPrevention implements Listener {
 
     @EventHandler
     public void ItemFramePrevention(PlayerInteractEntityEvent event) {
-        if (BasicModeManager.basicMode) return;
-        if (event.getRightClicked() instanceof ItemFrame) {
+        if (BasicModeManager.isBasicMode()) return;
+        if (event.getRightClicked() instanceof ItemFrame || event.getRightClicked() instanceof GlowItemFrame) {
             if (event.getPlayer().getInventory().getItemInMainHand().getType() == Material.DRAGON_EGG) {
                 event.setCancelled(true);
             }

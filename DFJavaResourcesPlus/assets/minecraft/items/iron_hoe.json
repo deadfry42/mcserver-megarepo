@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/iron_hoe"
+      },
+      "entries": [
+        {
+          "threshold": 10002114,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/copper/copper_hoe"
+          }
+        },
+        {
+          "threshold": 10001314,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/firidium/firidium_hoe"
+          }
+        }
+      ]
+    }
+  }

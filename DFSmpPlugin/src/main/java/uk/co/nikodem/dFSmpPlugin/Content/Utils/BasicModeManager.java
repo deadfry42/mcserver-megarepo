@@ -1,11 +1,13 @@
 package uk.co.nikodem.dFSmpPlugin.Content.Utils;
 
-import uk.co.nikodem.dFSmpPlugin.DFSmpPlugin;
-
 public class BasicModeManager {
-    public static boolean basicMode;
+    private static boolean basicMode;
 
-    public static void initBasicMode(DFSmpPlugin plugin) {
-        basicMode = plugin.getConfig().getBoolean("basicMode");
+    public static void initBasicMode() {
+        basicMode = ConfigManager.otherData.getBoolean("basicMode");
+    }
+
+    public static boolean isBasicMode() {
+        return basicMode;
     }
 }

@@ -1,0 +1,89 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/wooden_sword"
+      },
+      "entries": [
+        {
+          "threshold": 10001410,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/silk_tools/silk_sword"
+          }
+        },
+        {
+          "threshold": 10001910,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage0_sword"
+          }
+        },
+        {
+          "threshold": 10001911,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage1_sword"
+          }
+        },
+        {
+          "threshold": 10001912,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage2_sword"
+          }
+        },
+        {
+          "threshold": 10001913,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage3_sword"
+          }
+        },
+        {
+          "threshold": 10001914,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage4_sword"
+          }
+        },
+        {
+          "threshold": 10001915,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage5_sword"
+          }
+        },
+        {
+          "threshold": 10001916,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage6_sword"
+          }
+        },
+        {
+          "threshold": 10001917,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage7_sword"
+          }
+        },
+        {
+          "threshold": 10001918,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage8_sword"
+          }
+        },
+        {
+          "threshold": 10001919,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/progress_sword/stage9_sword"
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,78 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/firework_star",
+      "tints": [
+        {
+          "type": "minecraft:constant",
+          "value": -1
+        },
+        {
+          "type": "minecraft:firework",
+          "default": -7697782
+        }
+      ]
+    },
+    "entries": [
+      {
+        "threshold": 10001819,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/contaminated_membrane"
+        }
+      },
+      {
+        "threshold": 10001818,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/hermesboots"
+        }
+      },
+      {
+        "threshold": 10001817,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/cloudinabottle"
+        }
+      },
+      {
+        "threshold": 10001816,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/cobalt_shield"
+        }
+      },
+      {
+        "threshold": 10001815,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/flowerboots"
+        }
+      },
+      {
+        "threshold": 10001814,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/lucky_horseshoe"
+        }
+      },
+      {
+        "threshold": 10001312,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/autosmelt_essence"
+        }
+      },
+      {
+        "threshold": 10001212,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/accessory/vein_essence"
+        }
+      }
+    ]
+  }
+}

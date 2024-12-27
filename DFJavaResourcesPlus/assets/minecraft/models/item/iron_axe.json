@@ -1,0 +1,11 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/iron_axe"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001211}, "model": "dfjr:item/vein_tools/vein_axe"},
+        {"predicate": {"custom_model_data": 10001311}, "model": "dfjr:item/firidium/firidium_axe"},
+        {"predicate": {"custom_model_data": 10002111}, "model": "dfjr:item/copper/copper_axe"}
+    ]
+}

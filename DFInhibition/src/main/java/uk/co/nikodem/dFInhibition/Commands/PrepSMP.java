@@ -44,6 +44,7 @@ public class PrepSMP implements CommandExecutor {
         // tp to world origin, not spawn - //Bukkit.dispatchCommand(commandSender, "execute in minecraft:overworld run tp @a 0 100 0");
         Bukkit.dispatchCommand(commandSender, "time set day");
         Bukkit.dispatchCommand(commandSender, "weather clear");
+        Bukkit.dispatchCommand(commandSender, "gamerule keepInventory true");
 
         commandSender.sendMessage("Prepped");
         return true;

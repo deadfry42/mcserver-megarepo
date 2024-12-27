@@ -1,0 +1,14 @@
+{
+    "layers": {
+      "humanoid": [
+        {
+          "texture": "dfjr:copper_main"
+        }
+      ],
+      "humanoid_leggings": [
+        {
+          "texture": "dfjr:copper_legs"
+        }
+      ]
+    }
+  }

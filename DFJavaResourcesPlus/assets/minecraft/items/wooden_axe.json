@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/wooden_axe"
+      },
+      "entries": [
+        {
+          "threshold": 10001411,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/silk_tools/silk_axe"
+          }
+        }
+      ]
+    }
+  }

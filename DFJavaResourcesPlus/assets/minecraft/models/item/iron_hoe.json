@@ -1,0 +1,10 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/iron_hoe"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001314}, "model": "dfjr:item/firidium/firidium_hoe"},
+        {"predicate": {"custom_model_data": 10002114}, "model": "dfjr:item/copper/copper_hoe"}
+    ]
+}

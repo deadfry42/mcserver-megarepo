@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/stone_hoe"
+    },
+    "entries": [
+      {
+        "threshold": 10001014,
+        "model": {
+          "type": "model",
+          "model": "dfjr:item/calcite_tools/calcite_hoe"
+        }
+      }
+    ]
+  }
+}

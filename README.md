@@ -31,3 +31,9 @@ Plugins and what they do:
   - Prevents players from modifying the world in any way before the /startsmp command is run
   - Prevents players from entering the nether, the end and pvping until their respective commands have been run.
   - Commands can only be ran on the server console.
+
+Other:
+- DFJavaResources
+  - Resource pack for DFSmpPlugin for Java edition
+- DFBedrockResources
+  - Resource pack for DFSmpPlugin for Bedrock edition

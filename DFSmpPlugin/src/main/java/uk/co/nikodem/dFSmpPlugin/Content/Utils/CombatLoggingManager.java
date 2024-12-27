@@ -1,33 +1,57 @@
 package uk.co.nikodem.dFSmpPlugin.Content.Utils;
 
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import uk.co.nikodem.dFSmpPlugin.DFSmpPlugin;
+
+import javax.annotation.Nullable;
+import java.util.Objects;
 
 public class CombatLoggingManager {
-    static FileConfiguration config;
 
-    public static void init(DFSmpPlugin plugin) {
-        config = plugin.getConfig();
+    // TODO: Rewrite this to not use config files
+
+    public static int getLogTime() {
+        Integer logTime = (Integer) ConfigManager.trackingData.get("combatlogtime");
+        return logTime == null ? 30 : logTime;
     }
 
     public static boolean playerInCombat(Player plr) {
-        Long logTime = config.getInt("combatlogtime")*1000L;
+        Long logTime = getLogTime()*1000L;
         Long currentStamp = System.currentTimeMillis();
-        Long plrLastStamp = config.getLong("combatlog."+plr.getUniqueId());
+        Long plrLastStamp = ConfigManager.trackingData.getLong("combatlog."+plr.getUniqueId()+".time");
         return !(currentStamp > (plrLastStamp+logTime));
     }
 
     public static Long getPlayerCombatTimestamp(Player plr) {
-        return config.getLong("combatlog."+plr.getUniqueId());
+        return ConfigManager.trackingData.getLong("combatlog."+plr.getUniqueId()+".time");
+    }
+
+    @Nullable
+    public static Player getPlayerLastTag(Player plr) {
+        String uuid = getPlayerUUIDLastTag(plr);
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            if (Objects.equals(player.getUniqueId().toString(), uuid)) return player;
+        }
+        return null;
+    }
+
+    public static String getPlayerUUIDLastTag(Player plr) {
+        return ConfigManager.trackingData.getString("combatlog."+plr.getUniqueId()+".lastTag");
     }
 
     public static void playerRemoveCombatLog(Player plr) {
-        config.set("combatlog."+plr.getUniqueId(), 0);
+        ConfigManager.trackingData.set("combatlog."+plr.getUniqueId()+".time", 0);
+        ConfigManager.saveData(ConfigManager.DataFiles.TRACKING);
+    }
+
+    public static void playerSetLastTag(Player plr, Player attacker) {
+        ConfigManager.trackingData.set("combatlog."+plr.getUniqueId()+".lastTag", attacker.getUniqueId().toString());
+        ConfigManager.saveData(ConfigManager.DataFiles.TRACKING);
     }
 
     public static void playerUpdateCombatLog(Player plr) {
         Long currentStamp = System.currentTimeMillis();
-        config.set("combatlog."+plr.getUniqueId(), currentStamp);
+        ConfigManager.trackingData.set("combatlog."+plr.getUniqueId()+".time", currentStamp);
+        ConfigManager.saveData(ConfigManager.DataFiles.TRACKING);
     }
 }

@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/golden_sword"
+      },
+      "entries": [
+        {
+          "threshold": 10001723,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/wild/wildbow_sword"
+          }
+        }
+      ]
+    }
+}

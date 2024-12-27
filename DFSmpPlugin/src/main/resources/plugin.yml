@@ -1,7 +1,12 @@
 name: DFSmpPlugin
-version: '1.1.0-DEV'
+version: '2.0.0-DEV'
 main: uk.co.nikodem.dFSmpPlugin.DFSmpPlugin
-api-version: '1.20'
+authors: [deadfry42]
+
+api-version: '1.21.3'
+
+depend: [UltimateAdvancementAPI]
+
 commands:
   lobby:
     description: "Teleports you back to the lobby if you are not in combat."
@@ -9,3 +14,10 @@ commands:
   bin:
     description: "Opens a gui where you can throw things away"
     aliases: ["rubbish", "trash", "garbage"]
+  test:
+    description: "Test"
+  accessories:
+    description: "Opens a gui where you can equip and unequip your accessories"
+    aliases: ["accessory", "a"]
+  back:
+    description: "Returns you to your previous death, if you did not die in PVP."

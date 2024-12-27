@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/totem_of_undying"
+  },
+  "overrides": [
+      {"predicate": {"custom_model_data": 10002210}, "model": "dfjr:item/totems/legacy_totem"},
+      {"predicate": {"custom_model_data": 10002211}, "model": "dfjr:item/totems/amongus"},
+      {"predicate": {"custom_model_data": 10002212}, "model": "dfjr:item/totems/dantdmtotem"},
+      {"predicate": {"custom_model_data": 10002213}, "model": "dfjr:item/totems/technototem"},
+      {"predicate": {"custom_model_data": 10002214}, "model": "dfjr:item/totems/creepertotem"},
+      {"predicate": {"custom_model_data": 10002215}, "model": "dfjr:item/totems/herobrinetotem"}
+  ]
+}

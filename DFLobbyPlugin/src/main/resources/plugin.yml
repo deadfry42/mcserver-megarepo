@@ -18,3 +18,9 @@ commands:
   modded:
     usage: /modded
     description: "join modded"
+  kit:
+    usage: /kit
+    description: "get kit"
+  clr:
+    usage: /clr
+    description: "clear inventory"

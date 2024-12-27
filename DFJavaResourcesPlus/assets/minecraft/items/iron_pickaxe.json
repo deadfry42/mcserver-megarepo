@@ -1,0 +1,33 @@
+{
+    "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/iron_pickaxe"
+      },
+      "entries": [
+        {
+          "threshold": 10002112,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/copper/copper_pickaxe"
+          }
+        },
+        {
+          "threshold": 10001312,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/firidium/firidium_pickaxe"
+          }
+        },
+        {
+          "threshold": 10001212,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/vein_tools/vein_pickaxe"
+          }
+        }
+      ]
+    }
+  }

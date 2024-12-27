@@ -1,16 +1,19 @@
 package uk.co.nikodem.dFSmpPlugin.Content.CustomItems;
 
 import org.bukkit.*;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.util.Vector;
 import uk.co.nikodem.dFSmpPlugin.Content.Utils.AntiSpamManager;
 import uk.co.nikodem.dFSmpPlugin.Content.Utils.CombatLoggingManager;
 
@@ -18,17 +21,16 @@ import java.util.Objects;
 
 import static uk.co.nikodem.dFSmpPlugin.Content.Utils.SoundManager.PlayFailedSound;
 import static uk.co.nikodem.dFSmpPlugin.Content.Utils.SoundManager.PlaySucceedSound;
-import static uk.co.nikodem.dFSmpPlugin.Content.CustomItems.VeinMinableBlocks.*;
+import static uk.co.nikodem.dFSmpPlugin.Content.CustomItems.AbilityBlocks.*;
 
-public class ItemUse implements Listener {
-    @EventHandler
-    public void OnRightClick(PlayerInteractEvent e) {
+public class ItemUse {
+    public static void OnRightClick(PlayerInteractEvent e) {
         if (!e.getAction().equals(Action.RIGHT_CLICK_AIR) && !e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
         Player plr = e.getPlayer();
 
         if (!e.hasItem()) return;
         if (e.getItem() == null) return;
-        if (CustomItemManager.IsItem(e.getItem(), CustomItemManager.createMagicMirror())) {
+        if (CustomItemManager.IsItem(e.getItem(), CustomItems.createMagicMirror())) {
             // if magic mirror is used
             e.setCancelled(true);
             if (AntiSpamManager.playerInCooldown(plr, "MagicMirror", 1)) return;
@@ -55,17 +57,46 @@ public class ItemUse implements Listener {
                 PlayFailedSound(plr);
                 plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4You do not have a bed!"));
             }
+        } else if (e.getItem().getType() == Material.FIRE_CHARGE) {
+            boolean shoot = true;
+            if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
+                Block b = e.getClickedBlock();
+                if (b != null) {
+                    if (b.getType().isInteractable()
+                    || b.getType().equals(Material.OBSIDIAN)) {
+                        shoot = false;
+                    }
+                }
+            }
+            if (plr.hasCooldown(e.getItem().getType())) shoot = false;
+            if (shoot) {
+                Location loc = plr.getEyeLocation();
+                Vector direction = plr.getLocation().getDirection();
+                Location infront = loc.add(direction);
+                plr.getWorld().spawnEntity(infront, EntityType.FIREBALL);
+                e.getItem().setAmount(e.getItem().getAmount() - 1);
+                plr.setCooldown(e.getItem().getType(), 50);
+                e.setCancelled(true);
+            }
+        } else if (CustomItemManager.IsItem(e.getItem(), CustomItems.createWildBowSword())) {
+            if (e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
+                CustomItems.convertToWildBow(e.getItem());
+            }
         }
     }
 
-    @EventHandler
-    public void OnEntityBucketUse(PlayerInteractEntityEvent e) {
+    public static void OnEntityBucketUse(PlayerInteractEntityEvent e) {
         Entity en = e.getRightClicked();
         ItemStack bucket = e.getPlayer().getInventory().getItemInMainHand();
-        if (CustomItemManager.IsItem(bucket, CustomItemManager.createEntityBucket())) {
+        if (CustomItemManager.IsItem(bucket, CustomItems.createEntityBucket())) {
             e.setCancelled(true);
             Material setTo = null;
             switch (en.getType()) {
+                // do not allow bosses:
+                // case WARDEN -> setTo = Material.WARDEN_SPAWN_EGG;
+                // case WITHER -> setTo = Material.WITHER_SPAWN_EGG;
+                // case ELDER_GUARDIAN -> setTo = Material.ELDER_GUARDIAN_SPAWN_EGG;
+                // case ENDER_DRAGON -> setTo = Material.ENDER_DRAGON_SPAWN_EGG;
                 case BAT -> setTo = Material.BAT_SPAWN_EGG;
                 case BEE -> setTo = Material.BEE_SPAWN_EGG;
                 case CAT -> setTo = Material.CAT_SPAWN_EGG;
@@ -101,8 +132,6 @@ public class ItemUse implements Listener {
                 case SALMON -> setTo = Material.SALMON_SPAWN_EGG;
                 case SPIDER -> setTo = Material.SPIDER_SPAWN_EGG;
                 case TURTLE -> setTo = Material.TURTLE_SPAWN_EGG;
-                //case WARDEN -> setTo = Material.WARDEN_SPAWN_EGG;
-                //case WITHER -> setTo = Material.WITHER_SPAWN_EGG;
                 case ZOGLIN -> setTo = Material.ZOGLIN_SPAWN_EGG;
                 case ZOMBIE -> setTo = Material.ZOMBIE_SPAWN_EGG;
                 case AXOLOTL -> setTo = Material.AXOLOTL_SPAWN_EGG;
@@ -114,7 +143,7 @@ public class ItemUse implements Listener {
                 case RAVAGER -> setTo = Material.RAVAGER_SPAWN_EGG;
                 case SHULKER -> setTo = Material.SHULKER_SPAWN_EGG;
                 case SNIFFER -> setTo = Material.SNIFFER_SPAWN_EGG;
-                case SNOWMAN -> setTo = Material.SNOW_GOLEM_SPAWN_EGG;
+                case SNOW_GOLEM -> setTo = Material.SNOW_GOLEM_SPAWN_EGG;
                 case STRIDER -> setTo = Material.STRIDER_SPAWN_EGG;
                 case TADPOLE -> setTo = Material.TADPOLE_SPAWN_EGG;
                 case ENDERMAN -> setTo = Material.ENDERMAN_SPAWN_EGG;
@@ -131,16 +160,19 @@ public class ItemUse implements Listener {
                 case SILVERFISH -> setTo = Material.SILVERFISH_SPAWN_EGG;
                 case VINDICATOR -> setTo = Material.VINDICATOR_SPAWN_EGG;
                 case CAVE_SPIDER -> setTo = Material.CAVE_SPIDER_SPAWN_EGG;
-                case MUSHROOM_COW -> setTo = Material.MOOSHROOM_SPAWN_EGG;
+                case MOOSHROOM -> setTo = Material.MOOSHROOM_SPAWN_EGG;
                 case PIGLIN_BRUTE -> setTo = Material.PIGLIN_BRUTE_SPAWN_EGG;
                 case ZOMBIE_HORSE -> setTo = Material.ZOMBIE_HORSE_SPAWN_EGG;
                 case TROPICAL_FISH -> setTo = Material.TROPICAL_FISH_SPAWN_EGG;
-                //case ELDER_GUARDIAN -> setTo = Material.ELDER_GUARDIAN_SPAWN_EGG;
                 case WITHER_SKELETON -> setTo = Material.WITHER_SKELETON_SPAWN_EGG;
                 case ZOMBIE_VILLAGER -> setTo = Material.ZOMBIE_VILLAGER_SPAWN_EGG;
                 case ZOMBIFIED_PIGLIN -> setTo = Material.ZOMBIFIED_PIGLIN_SPAWN_EGG;
                 case WANDERING_TRADER -> setTo = Material.WANDERING_TRADER_SPAWN_EGG;
                 case SKELETON_HORSE -> setTo = Material.SKELETON_HORSE_SPAWN_EGG;
+                case ARMADILLO -> setTo = Material.ARMADILLO_SPAWN_EGG;
+                case BREEZE -> setTo = Material.BREEZE_SPAWN_EGG;
+                case TRADER_LLAMA -> setTo = Material.TRADER_LLAMA_SPAWN_EGG;
+                case BOGGED -> setTo = Material.BOGGED_SPAWN_EGG;
             }
             if (setTo != null) {
                 e.getPlayer().getWorld().playSound(e.getPlayer(), Sound.ITEM_BUCKET_FILL, 1F, 1F);
@@ -157,30 +189,39 @@ public class ItemUse implements Listener {
         }
     }
 
-    @EventHandler
-    public void OnLeftClick(PlayerInteractEvent e) {
-        if (!e.getAction().equals(Action.LEFT_CLICK_BLOCK)) return;
+    public static void OnLeftClick(PlayerInteractEvent e) {
+        if (!e.getAction().equals(Action.LEFT_CLICK_BLOCK)) {
+            if (!e.hasItem()) return;
+            ItemStack i = e.getItem();
+            if (e.getAction().equals(Action.LEFT_CLICK_AIR)) {
+                if (CustomItemManager.IsItem(i, CustomItems.createWildBow())) {
+                    CustomItems.convertToWildBowSword(i);
+                }
+            }
+            return;
+        }
         if (!e.hasItem()) return;
-        if (e.getItem() == null) return;
+        ItemStack i = e.getItem();
+        if (i == null) return;
         Player plr = e.getPlayer();
-        if (CustomItemManager.IsItem(e.getItem(), CustomItemManager.createObsidianAxe()) || CustomItemManager.IsItem(e.getItem(), CustomItemManager.createObsidianPickaxe())) {
-            plr.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 40, 2, false, false));
-        } else if (CustomItemManager.IsItem(e.getItem(), CustomItemManager.createVeinPickaxe())) {
+        if (CustomItemManager.IsItem(i, CustomItems.createObsidianAxe()) || CustomItemManager.IsItem(i, CustomItems.createObsidianPickaxe())) {
+            plr.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 40, 2, false, false));
+        } else if (CustomItemManager.IsItem(i, CustomItems.createVeinPickaxe())) {
             if (!isVeinMinable(Objects.requireNonNull(e.getClickedBlock()).getType())) return;
-            plr.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 40, 1, false, false));
-            plr.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 40, 1, false, false));
-        } else if (CustomItemManager.IsItem(e.getItem(), CustomItemManager.createVeinAxe())) {
+            plr.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 40, 1, false, false));
+            plr.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, 40, 1, false, false));
+        } else if (CustomItemManager.IsItem(i, CustomItems.createVeinAxe())) {
             if (!isVeinLogMinable(Objects.requireNonNull(e.getClickedBlock()).getType())) return;
-            plr.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 40, 1, false, false));
-            plr.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 40, 1, false, false));
+            plr.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 40, 1, false, false));
+            plr.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, 40, 1, false, false));
         } else if (
-                CustomItemManager.IsItem(e.getItem(), CustomItemManager.createCalcitePickaxe())
-                || CustomItemManager.IsItem(e.getItem(), CustomItemManager.createCalciteAxe())
-                || CustomItemManager.IsItem(e.getItem(), CustomItemManager.createCalciteShovel())
-                || CustomItemManager.IsItem(e.getItem(), CustomItemManager.createCalciteSword())
-                || CustomItemManager.IsItem(e.getItem(), CustomItemManager.createCalciteHoe())
+                CustomItemManager.IsItem(i, CustomItems.createCalcitePickaxe())
+                || CustomItemManager.IsItem(i, CustomItems.createCalciteAxe())
+                || CustomItemManager.IsItem(i, CustomItems.createCalciteShovel())
+                || CustomItemManager.IsItem(i, CustomItems.createCalciteSword())
+                || CustomItemManager.IsItem(i, CustomItems.createCalciteHoe())
         ) {
-            plr.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 40, 1, false, false));
+            plr.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 40, 1, false, false));
         }
     }
 }

@@ -1,0 +1,14 @@
+{
+    "layers": {
+      "humanoid": [
+        {
+          "texture": "dfjr:sculk_main"
+        }
+      ],
+      "humanoid_leggings": [
+        {
+          "texture": "dfjr:sculk_legs"
+        }
+      ]
+    }
+  }

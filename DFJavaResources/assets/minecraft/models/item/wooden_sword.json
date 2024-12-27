@@ -1,9 +1,0 @@
-{
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "minecraft:item/wooden_sword"
-    },
-    "overrides": [
-        {"predicate": {"custom_model_data": 10001410}, "model": "dfjr:item/silk_tools/silk_sword"}
-    ]
-}

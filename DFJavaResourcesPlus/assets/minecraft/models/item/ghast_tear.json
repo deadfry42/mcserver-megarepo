@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/ghast_tear"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data": 10001722}, "model": "dfjr:item/etc/bloody_tear"}
+    ]
+}

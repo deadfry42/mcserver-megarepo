@@ -12,14 +12,6 @@ public class InhibitManager {
         config = plugin.getConfig();
     }
 
-    public static void setKornelRespawned(Player plr) {
-        config.set(plr.getUniqueId()+".ChatConfirm", false);
-    }
-
-    public static void setKornelConfirmed(Player plr) {
-        config.set(plr.getUniqueId()+".ChatConfirm", true);
-    }
-
     public static void userInteractError(Player plr) {
 //        plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4The SMP hasn't started yet!"));
     }

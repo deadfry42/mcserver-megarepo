@@ -79,9 +79,4 @@ public class Player implements Listener {
         e.setCancelled(true);
         userCommandError(e.getPlayer());
     }
-
-    @EventHandler
-    public void KornelSpawn(PlayerRespawnEvent e) {
-
-    }
 }

@@ -15,6 +15,7 @@ public class OnJoin implements Listener {
     {
         e.setJoinMessage(null);
         Player plr = e.getPlayer();
+        plr.setCollidable(false);
         World world = Bukkit.getWorld("world");
         Location spawnPoint = world.getSpawnLocation();
         spawnPoint.add(0.5, 0, 0.5);

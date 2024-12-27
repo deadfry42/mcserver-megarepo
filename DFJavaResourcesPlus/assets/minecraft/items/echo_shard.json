@@ -1,0 +1,19 @@
+{
+  "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/echo_shard"
+      },
+      "entries": [
+        {
+          "threshold": 10002320,
+          "model": {
+            "type": "model",
+            "model": "dfjr:item/sculk/sculk_fragment"
+          }
+        }
+      ]
+    }
+}

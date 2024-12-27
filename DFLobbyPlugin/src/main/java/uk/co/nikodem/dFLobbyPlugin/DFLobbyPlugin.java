@@ -24,6 +24,8 @@ public final class DFLobbyPlugin extends JavaPlugin {
         Objects.requireNonNull(getCommand("skyblock")).setExecutor(new Skyblock(bu));
         Objects.requireNonNull(getCommand("testserver")).setExecutor(new TestPlr(bu));
         Objects.requireNonNull(getCommand("modded")).setExecutor(new Modded(bu));
+        Objects.requireNonNull(getCommand("kit")).setExecutor(new Kit());
+        Objects.requireNonNull(getCommand("clr")).setExecutor(new Clr());
     }
 
     @Override
