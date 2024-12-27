@@ -33,7 +33,8 @@ Plugins and what they do:
   - Commands can only be ran on the server console.
 
 Other:
-- DFJavaResources
+- DFJavaResourcesPlus
   - Resource pack for DFSmpPlugin for Java edition
 - DFBedrockResources
   - Resource pack for DFSmpPlugin for Bedrock edition
+  - Requires GeyserMC Bindings (dfsmpitems.json)
