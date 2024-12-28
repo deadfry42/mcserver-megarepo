@@ -11,6 +11,10 @@ all of the plugins I custom made especially for my minecraft server!
 > They are specifically built for my server, and are likely not going to work in another without modification of the plugins.
 
 Plugins and what they do:
+- DFChatImprovements
+  - Adds custom emojis via the format :{emojiname}:
+  - (Requires a DFJavaResourcesPlus for Java, and DFBedrockResources for Bedrock)
+  - Adds pinging via the format @{username}
 - DFSmpPlugin
   - Used in the SMP server and the Skyblock server.
   - Adds custom content to make survival more fun.
