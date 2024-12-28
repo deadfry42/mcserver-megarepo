@@ -33,8 +33,8 @@ public class PrepSMP implements CommandExecutor {
         config.set("end", true);
 
         plugin.getLogger().log(Level.INFO, "#### >>>> remember to reduce the world border!!!!");
-        Bukkit.dispatchCommand(commandSender, "kill @e[type=!minecraft:player]");
-        Bukkit.dispatchCommand(commandSender, "kill @e[type=!minecraft:player]");
+        Bukkit.dispatchCommand(commandSender, "kill @e[type=!minecraft:player,type=!minecraft:villager]");
+        Bukkit.dispatchCommand(commandSender, "kill @e[type=!minecraft:player,type=!minecraft:villager]");
         Bukkit.dispatchCommand(commandSender, "xp set @a 0 points");
         Bukkit.dispatchCommand(commandSender, "xp set @a 0 levels");
         Bukkit.dispatchCommand(commandSender, "clear @a");

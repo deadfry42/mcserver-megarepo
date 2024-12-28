@@ -4,7 +4,7 @@ import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.*;
 import org.bukkit.event.player.*;
 import java.util.Objects;
 
@@ -63,6 +63,42 @@ public class Player implements Listener {
         } else if (isWorldLocked()) {
             e.setCancelled(true);
         }
+    }
+
+    @EventHandler
+    public void Damage(EntityDamageEvent e) {
+        if (!isWorldLocked()) return;
+        if (e.getEntity() instanceof org.bukkit.entity.Player plr) {
+            userInteractError(plr);
+        }
+        e.setCancelled(true);
+    }
+
+    @EventHandler
+    public void Damage(EntityDamageByBlockEvent e) {
+        if (!isWorldLocked()) return;
+        if (e.getEntity() instanceof org.bukkit.entity.Player plr) {
+            userInteractError(plr);
+        }
+        e.setCancelled(true);
+    }
+
+    @EventHandler
+    public void Food(FoodLevelChangeEvent e) {
+        if (!isWorldLocked()) return;
+        if (e.getEntity() instanceof org.bukkit.entity.Player plr) {
+            userInteractError(plr);
+        }
+        e.setCancelled(true);
+    }
+
+    @EventHandler
+    public void Pickup(EntityPickupItemEvent e) {
+        if (!isWorldLocked()) return;
+        if (e.getEntity() instanceof org.bukkit.entity.Player plr) {
+            userInteractError(plr);
+        }
+        e.setCancelled(true);
     }
 
     @EventHandler

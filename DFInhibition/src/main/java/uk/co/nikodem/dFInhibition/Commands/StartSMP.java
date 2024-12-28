@@ -30,7 +30,7 @@ public class StartSMP implements CommandExecutor {
         }
         // console only
         for(Player plr : Bukkit.getOnlinePlayers()){
-            plr.sendTitle(ChatColor.translateAlternateColorCodes('&', "&7The SMP is starting!"), "("+ Bukkit.getOnlinePlayers().size()+" players online)");
+            plr.sendTitle(ChatColor.translateAlternateColorCodes('&', "&7The SMP is starting!"), "("+ Bukkit.getOnlinePlayers().size()+" "+(Bukkit.getOnlinePlayers().size() == 1 ? "player" : "players")+" online)");
         }
         final int[] i = {16};
         BukkitScheduler scheduler = getServer().getScheduler();

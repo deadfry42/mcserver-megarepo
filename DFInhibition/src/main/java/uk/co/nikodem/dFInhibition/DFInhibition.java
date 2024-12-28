@@ -7,6 +7,7 @@ import uk.co.nikodem.dFInhibition.Commands.StartSMP;
 import uk.co.nikodem.dFInhibition.Inhibition.InhibitManager;
 import uk.co.nikodem.dFInhibition.Inhibition.Mobs;
 import uk.co.nikodem.dFInhibition.Inhibition.Player;
+import uk.co.nikodem.dFInhibition.Inhibition.World;
 
 import java.util.Objects;
 
@@ -27,9 +28,12 @@ public final class DFInhibition extends JavaPlugin {
 
         new InhibitManager(this);
 
+        createCommands();
+
         // inhibition
         getServer().getPluginManager().registerEvents(new Mobs(), this);
         getServer().getPluginManager().registerEvents(new Player(), this);
+//        getServer().getPluginManager().registerEvents(new World(), this);
     }
 
     public void createCommands() {

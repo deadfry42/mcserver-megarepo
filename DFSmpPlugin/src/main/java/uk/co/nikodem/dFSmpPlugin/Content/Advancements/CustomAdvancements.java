@@ -41,7 +41,7 @@ public class CustomAdvancements {
 
     public final equipAccessory EquipAccessory;
 
-    public final obtainGun ObtainGun;
+//    public final obtainGun ObtainGun;
 
     public CustomAdvancements(DFSmpPlugin plugin) {
         this.plugin = plugin;
@@ -63,7 +63,7 @@ public class CustomAdvancements {
                 .add(barelySurvived.KEY, 1f, 2f)
                 .add(matchingAttire.KEY, 1f, 3f)
                 .add(indecisiveWardrobe.KEY, 2f, 3f)
-                .add(obtainGun.KEY, 1f, -3f)
+//                .add(obtainGun.KEY, 1f, -3f)
                 .add(trueBluebellsar.KEY, -2f, 0f)
                 .add(equipAccessory.KEY, 1f, 4f)
                 .build();
@@ -90,7 +90,7 @@ public class CustomAdvancements {
         MatchingAttire = new matchingAttire(root, adapter.getX(matchingAttire.KEY), adapter.getY(matchingAttire.KEY));
         IndecisiveWardrobe = new indecisiveWardrobe(MatchingAttire, adapter.getX(indecisiveWardrobe.KEY), adapter.getY(indecisiveWardrobe.KEY));
 
-        ObtainGun = new obtainGun(root, adapter.getX(obtainGun.KEY), adapter.getY(obtainGun.KEY));
+//        ObtainGun = new obtainGun(root, adapter.getX(obtainGun.KEY), adapter.getY(obtainGun.KEY));
 
         EquipAccessory = new equipAccessory(root, adapter.getX(equipAccessory.KEY), adapter.getY(equipAccessory.KEY));
 
@@ -118,7 +118,7 @@ public class CustomAdvancements {
                 MatchingAttire,
                 IndecisiveWardrobe,
 
-                ObtainGun,
+//                ObtainGun,
 
                 EquipAccessory
         );
