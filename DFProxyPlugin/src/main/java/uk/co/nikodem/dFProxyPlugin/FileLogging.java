@@ -31,6 +31,7 @@ public class FileLogging {
         plugin.logs.set("players."+uuid+".latestJoinTimestamp", attempt.time);
 
         plugin.logs.set("players."+uuid+".latestVersion", attempt.readableVer);
+        plugin.logs.set("players."+uuid+".latestProtocol", attempt.protocolVer);
         plugin.logs.set("players."+uuid+".latestBedrock", attempt.bedrock);
 
         plugin.logs.set("players."+uuid+".latestType", attempt.type);
@@ -46,6 +47,7 @@ public class FileLogging {
         plugin.logs.set(path+".joinTimestamp", attempt.time);
 
         plugin.logs.set(path+".version", attempt.readableVer);
+        plugin.logs.set(path+".protocol", attempt.protocolVer);
         plugin.logs.set(path+".bedrock", attempt.bedrock);
 
         plugin.logs.set(path+".type", attempt.type);

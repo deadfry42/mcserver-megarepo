@@ -94,6 +94,8 @@ public class LoginAttempt {
         this.protocolVer = v.getProtocol();
         this.platform = "Java";
 
+        this.readableVer = "MINECRAFT_Unknown";
+
         if (this.protocolVer == 768) {
             // add seperate case for this protocol number,
             // mojang decided to group these two together for some reason ;)
