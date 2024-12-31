@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import uk.co.nikodem.dFInhibition.DFInhibition;
+import uk.co.nikodem.dFInhibition.Handlers.ConfigManager;
 
 import java.util.Objects;
 
@@ -39,7 +40,7 @@ public class EnableFeature implements CommandExecutor {
         } else if (Objects.equals(featureString, "wb3")) {
             Bukkit.dispatchCommand(commandSender, "worldborder set 10000 10");
         } else {
-            config.set(featureString, false);
+            ConfigManager.write(featureString, false);
         }
 
         String title = "error occured lol ¯\\_(ツ)_/¯";

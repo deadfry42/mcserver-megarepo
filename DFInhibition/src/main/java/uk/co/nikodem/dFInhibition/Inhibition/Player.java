@@ -6,9 +6,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.*;
 import org.bukkit.event.player.*;
+import uk.co.nikodem.dFInhibition.Handlers.InhibitManager;
+
 import java.util.Objects;
 
-import static uk.co.nikodem.dFInhibition.Inhibition.InhibitManager.*;
+import static uk.co.nikodem.dFInhibition.Handlers.InhibitManager.*;
 
 public class Player implements Listener {
     @EventHandler

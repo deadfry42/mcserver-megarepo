@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import uk.co.nikodem.dFInhibition.DFInhibition;
+import uk.co.nikodem.dFInhibition.Handlers.ConfigManager;
 
 import java.util.logging.Level;
 
@@ -27,10 +28,10 @@ public class PrepSMP implements CommandExecutor {
             return true;
         }
 
-        config.set("locked", true);
-        config.set("pvp", true);
-        config.set("nether", true);
-        config.set("end", true);
+        ConfigManager.write("locked", true);
+        ConfigManager.write("pvp", true);
+        ConfigManager.write("nether", true);
+        ConfigManager.write("end", true);
 
         plugin.getLogger().log(Level.INFO, "#### >>>> remember to reduce the world border!!!!");
         Bukkit.dispatchCommand(commandSender, "kill @e[type=!minecraft:player,type=!minecraft:villager]");
@@ -45,6 +46,8 @@ public class PrepSMP implements CommandExecutor {
         Bukkit.dispatchCommand(commandSender, "time set day");
         Bukkit.dispatchCommand(commandSender, "weather clear");
         Bukkit.dispatchCommand(commandSender, "gamerule keepInventory true");
+        Bukkit.dispatchCommand(commandSender, "gamerule doDaylightCycle false");
+        Bukkit.dispatchCommand(commandSender, "gamerule doWeatherCycle false");
 
         commandSender.sendMessage("Prepped");
         return true;

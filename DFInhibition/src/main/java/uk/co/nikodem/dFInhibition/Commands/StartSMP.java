@@ -6,20 +6,18 @@ import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitScheduler;
 import uk.co.nikodem.dFInhibition.DFInhibition;
+import uk.co.nikodem.dFInhibition.Handlers.ConfigManager;
 
 import static org.bukkit.Bukkit.getServer;
 
 public class StartSMP implements CommandExecutor {
     public final DFInhibition plugin;
-    public final FileConfiguration config;
 
     public StartSMP(DFInhibition plugin) {
         this.plugin = plugin;
-        this.config = plugin.getConfig();
     }
 
     @Override
@@ -41,19 +39,23 @@ public class StartSMP implements CommandExecutor {
                 for (Player plr : Bukkit.getOnlinePlayers()) {
                     plr.playSound(plr, Sound.ENTITY_ENDER_DRAGON_GROWL, 1, 1);
                     plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2SMP has started!"));
-                    plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4PVP will be enabled in 1 day!"));
+                    plr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4Keep Inventory will be disabled in a few hours!"));
                     plr.sendTitle(ChatColor.translateAlternateColorCodes('&', "The SMP has begun!"), "good luck :)");
                 }
+
+                ConfigManager.write("locked", false);
+
                 Bukkit.dispatchCommand(commandSender, "worldborder set 2000 10");
                 Bukkit.dispatchCommand(commandSender, "clear @a");
                 Bukkit.dispatchCommand(commandSender, "effect clear @a");
-                config.set("locked", false);
                 Bukkit.dispatchCommand(commandSender, "effect give @a minecraft:regeneration 1 255");
                 Bukkit.dispatchCommand(commandSender, "effect give @a minecraft:saturation 1 255");
                 Bukkit.dispatchCommand(commandSender, "effect give @a minecraft:resistance 5 255");
                 Bukkit.dispatchCommand(commandSender, "time set day");
                 Bukkit.dispatchCommand(commandSender, "weather clear");
                 Bukkit.dispatchCommand(commandSender, "gamerule keepInventory true");
+                Bukkit.dispatchCommand(commandSender, "gamerule doDaylightCycle true");
+                Bukkit.dispatchCommand(commandSender, "gamerule doWeatherCycle true");
 
                 scheduler.cancelTask(task.getTaskId());
             } else {
