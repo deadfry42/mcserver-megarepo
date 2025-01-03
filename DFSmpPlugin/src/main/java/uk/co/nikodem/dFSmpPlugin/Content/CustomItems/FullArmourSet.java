@@ -45,7 +45,7 @@ public class FullArmourSet {
             .setChestplate(Material.DIAMOND_CHESTPLATE)
             .setLeggings(Material.DIAMOND_LEGGINGS)
             .setBoots(Material.DIAMOND_BOOTS)
-            .setSetBonus(false);
+            .setSetBonus("Gives you the power of the conduits");
 
     public static final FullArmourSet Netherite = new FullArmourSet("Netherite")
             .setHelmet(Material.NETHERITE_HELMET)

@@ -35,7 +35,7 @@ public class BreakBlock {
 
         if (viableVeinPickaxe(plr, item)) {
             if (isVeinMinable(origin.getType())) {
-                plugin.ca.VeinMinedALot.incrementProgression(plr);
+                if (!plugin.ca.VeinMinedALot.isGranted(plr)) plugin.ca.VeinMinedALot.incrementProgression(plr);
                 List<Block> veinBlocks = new ArrayList<>();
                 veinBlocks.add(origin);
                 findVeinBlocks(origin, origin.getType(), veinBlocks);
@@ -52,7 +52,7 @@ public class BreakBlock {
             }
         } else if (viableVeinAxe(plr, item)) {
             if (isVeinLogMinable(origin.getType())) {
-                plugin.ca.VeinMinedALot.incrementProgression(plr);
+                if (!plugin.ca.VeinMinedALot.isGranted(plr)) plugin.ca.VeinMinedALot.incrementProgression(plr);
                 List<Block> veinLogs = new ArrayList<>();
                 veinLogs.add(origin);
                 findVeinLogs(origin, origin.getType(), veinLogs);
@@ -78,7 +78,7 @@ public class BreakBlock {
                     plr.getWorld().dropItemNaturally(origin.getLocation().add(new Location(origin.getWorld(), 0.5, 0.5, 0.5)), newDrop);
                 }
 
-                plugin.ca.AutoSmeltedALot.incrementProgression(plr);
+                if (!plugin.ca.AutoSmeltedALot.isGranted(plr)) plugin.ca.AutoSmeltedALot.incrementProgression(plr);
             }
         } else if (viableAutosmeltPickaxe(plr, item)) {
             Material drop = getCookableOre(origin.getType());
@@ -92,7 +92,7 @@ public class BreakBlock {
                     plr.getWorld().dropItemNaturally(origin.getLocation().add(new Location(origin.getWorld(), 0.5, 0.5, 0.5)), newDrop);
                 }
 
-                plugin.ca.AutoSmeltedALot.incrementProgression(plr);
+                if (!plugin.ca.AutoSmeltedALot.isGranted(plr)) plugin.ca.AutoSmeltedALot.incrementProgression(plr);
             }
         } else if (viableAutosmeltShovel(plr, item)) {
             Material drop = getCookableShovel(origin.getType());
@@ -106,7 +106,7 @@ public class BreakBlock {
                     plr.getWorld().dropItemNaturally(origin.getLocation().add(new Location(origin.getWorld(), 0.5, 0.5, 0.5)), newDrop);
                 }
 
-                plugin.ca.AutoSmeltedALot.incrementProgression(plr);
+                if (!plugin.ca.AutoSmeltedALot.isGranted(plr)) plugin.ca.AutoSmeltedALot.incrementProgression(plr);
             }
         }
     }

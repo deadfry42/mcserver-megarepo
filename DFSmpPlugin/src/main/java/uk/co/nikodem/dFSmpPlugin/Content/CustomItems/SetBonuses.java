@@ -38,7 +38,9 @@ public class SetBonuses {
                 plr.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 25, 0, true, false));
             } else if (FullArmourSet.Golden.playerHasEquipped(plr)) {
                 plr.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 25, 1, true, false));
-            } else if (FullArmourSet.Netherite.playerHasEquipped(plr)) {
+            } else if (FullArmourSet.Diamond.playerHasEquipped(plr)) {
+                plr.addPotionEffect(new PotionEffect(PotionEffectType.CONDUIT_POWER, 25, 2, true, false));
+            }else if (FullArmourSet.Netherite.playerHasEquipped(plr)) {
                 plr.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 25, 1, true, false));
             } else if (FullArmourSet.Obsidian.playerHasEquipped(plr)) {
                 plr.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 25, 0, true, false));

@@ -39,17 +39,6 @@ public class OnHit implements Listener {
             if (CustomItemManager.IsItem(i, CustomItems.createWildBow())) {
                 CustomItems.convertToWildBowSword(i);
             }
-            if (CustomItemManager.IsItem(i, CustomItems.createBluebellsarStick())) {
-                e.setCancelled(true);
-                return;
-            } else if (CustomItemManager.IsItem(i, CustomItems.createKnockbackStick())) {
-                if (attacker.hasCooldown(CustomItems.createKnockbackStick())) {
-                    e.setCancelled(true);
-                } else {
-                    e.setDamage(0);
-                    attacker.setCooldown(CustomItems.createKnockbackStick(), 40);
-                }
-            }
             if (FullArmourSet.Copper.playerHasEquipped(attacker)) {
                 if (e.getEntity().getWorld().hasStorm()) {
                     int random = CustomItems.isCopperTool(i) ? (int) (Math.random() * 30 + 1) : (int) (Math.random() * 50 + 1) ;
@@ -81,6 +70,18 @@ public class OnHit implements Listener {
                 ItemStack weapon = attacker.getInventory().getItemInMainHand();
                 if (AccessoryManager.playerHasAccessoryEquipped(AccessoryData.htbook, attacker)) {
                     e.setDamage(e.getDamage() * 0.75); // reduce damage by 25%
+                }
+
+                if (CustomItemManager.IsItem(weapon, CustomItems.createBluebellsarStick())) {
+                    e.setCancelled(true);
+                    return;
+                } else if (CustomItemManager.IsItem(weapon, CustomItems.createKnockbackStick())) {
+                    if (attacker.hasCooldown(CustomItems.createKnockbackStick())) {
+                        e.setCancelled(true);
+                    } else {
+                        e.setDamage(0);
+                        attacker.setCooldown(CustomItems.createKnockbackStick(), 40);
+                    }
                 }
 
                 if (!CombatLoggingManager.playerInCombat(victim)) {

@@ -1,6 +1,7 @@
 package uk.co.nikodem.dFSmpPlugin.Content.Events;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameRule;
 import org.bukkit.Material;
 import org.bukkit.damage.DamageType;
 import org.bukkit.entity.Entity;
@@ -68,7 +69,7 @@ public class OnDeath implements Listener {
                 e.setKeepInventory(true);
             }
         } else {
-            AccessoryManager.dropAccessories(plr);
+            if (Boolean.FALSE.equals(plr.getWorld().getGameRuleValue(GameRule.KEEP_INVENTORY))) AccessoryManager.dropAccessories(plr);
             LastDeathManager.playerSetLastDeath(e);
         }
 
